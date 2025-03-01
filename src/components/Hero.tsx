@@ -50,11 +50,18 @@ const Hero = () => {
               
               <div className="bg-amber-400 rounded-full w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[360px] md:h-[360px] relative overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=360&h=400" 
+                  src="/lovable-uploads/83e49f23-b7e7-48f3-8219-a2807a82b234.png" 
                   alt="Olivia Smith" 
-                  className="absolute bottom-0 right-0 w-[100%] h-auto object-cover"
-                  style={{ objectPosition: 'center 20%' }}
+                  className="absolute bottom-0 w-full h-auto object-cover"
+                  style={{ objectPosition: 'center' }}
                 />
+              </div>
+              
+              <div className="absolute -left-10 -bottom-6 animate-pulse-soft hidden sm:block">
+                <div className="relative bg-darkblue-700 text-white rounded-full p-3 md:p-4 flex items-center justify-center w-12 h-12 md:w-16 md:h-16">
+                  <span className="text-xs md:text-sm font-medium">Website Design</span>
+                  <div className="animate-spin-slow w-full h-full rounded-full border-2 border-white border-dashed"></div>
+                </div>
               </div>
               
               <div className="absolute -right-4 md:right-8 -bottom-6 animate-pulse-soft hidden sm:block">
