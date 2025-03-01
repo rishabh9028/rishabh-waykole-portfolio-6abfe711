@@ -22,7 +22,7 @@ const Hero = () => {
           
           {/* Text Content - Below image on mobile, to the left on desktop */}
           <div className="space-y-4 md:space-y-6 order-2 md:order-1 fade-in-up" style={{ '--delay': 0 } as React.CSSProperties}>
-            <div className="text-darkblue-700 text-sm">
+            <div className="text-darkblue-700 text-base md:text-lg">
               Hello There! 👋
             </div>
             
