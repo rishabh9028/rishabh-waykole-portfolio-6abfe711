@@ -31,9 +31,9 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center">
           <div className="bg-olive-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-2">
-            <span className="font-semibold">O</span>
+            <span className="font-semibold">R</span>
           </div>
-          <span className="font-medium text-olive-800">Olivia.</span>
+          <span className="font-medium text-olive-800">Rishabh.</span>
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
