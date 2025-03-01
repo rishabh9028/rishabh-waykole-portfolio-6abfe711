@@ -83,7 +83,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto bg-olive-800 text-white" id="faq">
+    <section className="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto bg-darkblue-600 text-white" id="faq">
       <div className="text-center mb-10">
         <h2 className="section-title">FAQs</h2>
         <h3 className="text-3xl md:text-4xl font-semibold mt-4">
