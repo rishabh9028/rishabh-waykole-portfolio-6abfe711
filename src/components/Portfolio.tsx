@@ -28,15 +28,15 @@ const Portfolio = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {projects.map((project, index) => (
-          <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md fade-in-up flex flex-col md:flex-row" style={{ '--delay': index + 1 } as React.CSSProperties}>
-            <div className="w-full md:w-1/2">
+          <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md fade-in-up flex flex-col" style={{ '--delay': index + 1 } as React.CSSProperties}>
+            <div className="w-full">
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
-            <div className="w-full md:w-1/2 p-6 flex flex-col justify-between">
+            <div className="w-full p-6 flex flex-col justify-between">
               <div>
                 <div className="mb-4 space-y-2">
                   {project.tags.map((tag, tagIndex) => (
