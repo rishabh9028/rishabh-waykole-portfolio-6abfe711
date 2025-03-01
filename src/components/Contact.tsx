@@ -44,8 +44,8 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h5 className="font-medium text-olive-800">Location</h5>
-                  <p className="text-olive-600">San Francisco, CA</p>
+                  <h5 className="font-medium text-darkblue-800">Location</h5>
+                  <p className="text-darkblue-600">San Francisco, CA</p>
                 </div>
               </div>
               
@@ -56,8 +56,8 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h5 className="font-medium text-olive-800">Email</h5>
-                  <p className="text-olive-600">hello@rishabhwaykole.com</p>
+                  <h5 className="font-medium text-darkblue-800">Email</h5>
+                  <p className="text-darkblue-600">hello@rishabhwaykole.com</p>
                 </div>
               </div>
               
@@ -68,8 +68,8 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h5 className="font-medium text-olive-800">Phone</h5>
-                  <p className="text-olive-600">+1 (555) 123-4567</p>
+                  <h5 className="font-medium text-darkblue-800">Phone</h5>
+                  <p className="text-darkblue-600">+1 (555) 123-4567</p>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-olive-700 mb-1">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-darkblue-700 mb-1">Name</label>
                 <input
                   type="text"
                   id="name"
@@ -92,7 +92,7 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-olive-700 mb-1">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-darkblue-700 mb-1">Email</label>
                 <input
                   type="email"
                   id="email"
@@ -107,7 +107,7 @@ const Contact = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-olive-700 mb-1">Phone</label>
+                <label htmlFor="phone" className="block text-sm font-medium text-darkblue-700 mb-1">Phone</label>
                 <input
                   type="tel"
                   id="phone"
@@ -118,7 +118,7 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-olive-700 mb-1">Subject</label>
+                <label htmlFor="subject" className="block text-sm font-medium text-darkblue-700 mb-1">Subject</label>
                 <input
                   type="text"
                   id="subject"
@@ -132,7 +132,7 @@ const Contact = () => {
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-olive-700 mb-1">Message</label>
+              <label htmlFor="message" className="block text-sm font-medium text-darkblue-700 mb-1">Message</label>
               <textarea
                 id="message"
                 name="message"
@@ -146,7 +146,7 @@ const Contact = () => {
             
             <button
               type="submit"
-              className="w-full py-3 bg-olive-600 text-white font-medium rounded-md hover:bg-olive-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-olive-500"
+              className="w-full py-3 bg-darkblue-600 text-white font-medium rounded-md hover:bg-darkblue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-darkblue-500"
             >
               Send Message
             </button>

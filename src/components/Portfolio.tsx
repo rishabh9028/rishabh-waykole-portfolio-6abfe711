@@ -19,7 +19,7 @@ const Portfolio = () => {
           <h3 className="text-3xl md:text-4xl font-semibold">
             My Latest <span className="text-amber-400">Projects</span>
           </h3>
-          <a href="#" className="inline-flex items-center px-4 py-2 rounded-full bg-olive-600 text-white hover:bg-olive-700 transition-all duration-300 group">
+          <a href="#" className="inline-flex items-center px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300 group">
             <span>View All Projects</span>
             <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
           </a>
@@ -46,7 +46,7 @@ const Portfolio = () => {
             <div className="p-6">
               <h4 className="text-2xl font-semibold mb-2">{project.title}</h4>
               <p className="text-gray-600 mb-4">{project.subtitle}</p>
-              <a href="#" className="inline-flex items-center px-4 py-2 rounded-full bg-olive-600 text-white hover:bg-olive-700 transition-all duration-300 group">
+              <a href="#" className="inline-flex items-center px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300 group">
                 <span>View Details</span>
                 <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
               </a>
