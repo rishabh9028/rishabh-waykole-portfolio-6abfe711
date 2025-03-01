@@ -15,7 +15,7 @@ const Hero = () => {
   }, []);
   
   return (
-    <section className="pt-20 md:pt-32 pb-16 relative overflow-hidden">
+    <section className="pt-20 md:pt-32 pb-0 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 max-w-screen-xl xl:max-w-6xl 2xl:max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Image - First on mobile, to the right on desktop */}
