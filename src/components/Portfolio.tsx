@@ -28,28 +28,32 @@ const Portfolio = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {projects.map((project, index) => (
-          <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md fade-in-up" style={{ '--delay': index + 1 } as React.CSSProperties}>
-            <div className="relative">
+          <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md fade-in-up flex flex-col md:flex-row" style={{ '--delay': index + 1 } as React.CSSProperties}>
+            <div className="w-full md:w-1/2">
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-64 object-cover"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute top-4 right-4 space-x-2">
-                {project.tags.map((tag, tagIndex) => (
-                  <span key={tagIndex} className="inline-block bg-amber-400 text-darkblue-800 text-xs px-3 py-1 rounded-full">
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </div>
-            <div className="p-6">
-              <h4 className="text-2xl font-semibold mb-2">{project.title}</h4>
-              <p className="text-gray-600 mb-4">{project.subtitle}</p>
-              <a href="#" className="inline-flex items-center px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300 group">
-                <span>View Details</span>
-                <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-              </a>
+            <div className="w-full md:w-1/2 p-6 flex flex-col justify-between">
+              <div>
+                <div className="mb-4 space-y-2">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span key={tagIndex} className="inline-block bg-amber-400 text-darkblue-800 text-xs px-3 py-1 rounded-full mr-2">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h4 className="text-2xl font-semibold mb-2">{project.title}</h4>
+                <p className="text-gray-600 mb-4">{project.subtitle}</p>
+              </div>
+              <div className="mt-auto">
+                <a href="#" className="inline-flex items-center px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300 group">
+                  <span>View Details</span>
+                  <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
             </div>
           </div>
         ))}
