@@ -62,7 +62,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-gray-50" id="services">
+    <section className="pt-4 pb-12 md:pt-6 md:pb-16 bg-gray-50" id="services">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
