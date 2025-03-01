@@ -6,8 +6,19 @@ const Hero = () => {
     <section className="pt-20 md:pt-32 pb-16 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Text Content - Always on top for mobile */}
-          <div className="space-y-4 md:space-y-6 order-1 fade-in-up" style={{ '--delay': 0 } as React.CSSProperties}>
+          {/* Image - First on mobile, to the right on desktop */}
+          <div className="relative text-center md:text-right fade-in-up order-1 md:order-2" style={{ '--delay': 2 } as React.CSSProperties}>
+            <div className="relative inline-block">
+              <img 
+                src="/lovable-uploads/83e49f23-b7e7-48f3-8219-a2807a82b234.png" 
+                alt="Rishabh Waykole" 
+                className="w-[340px] h-auto sm:w-[400px] md:w-[480px] lg:w-[520px] rounded-lg object-cover"
+              />
+            </div>
+          </div>
+          
+          {/* Text Content - Below image on mobile, to the left on desktop */}
+          <div className="space-y-4 md:space-y-6 order-2 md:order-1 fade-in-up" style={{ '--delay': 0 } as React.CSSProperties}>
             <div className="text-darkblue-700 text-sm">
               Hello There! 👋
             </div>
@@ -29,17 +40,6 @@ const Hero = () => {
               <button className="btn-secondary text-sm md:text-base">
                 <span>Hire Me</span>
               </button>
-            </div>
-          </div>
-          
-          {/* Image - Always below text on mobile, to the right on desktop */}
-          <div className="relative text-center md:text-right fade-in-up order-2 mt-8 md:mt-0" style={{ '--delay': 2 } as React.CSSProperties}>
-            <div className="relative inline-block">
-              <img 
-                src="/lovable-uploads/83e49f23-b7e7-48f3-8219-a2807a82b234.png" 
-                alt="Rishabh Waykole" 
-                className="w-[340px] h-auto sm:w-[400px] md:w-[480px] lg:w-[520px] rounded-lg object-cover"
-              />
             </div>
           </div>
         </div>
