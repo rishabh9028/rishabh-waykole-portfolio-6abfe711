@@ -14,13 +14,12 @@ const Footer = () => {
           </div>
           
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-4">Sitemap</h3>
+            <h3 className="text-xl font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-300 hover:text-amber-400 transition-colors">Home</a></li>
               <li><a href="#services" className="text-gray-300 hover:text-amber-400 transition-colors">Services</a></li>
               <li><a href="#about" className="text-gray-300 hover:text-amber-400 transition-colors">About</a></li>
               <li><a href="#portfolio" className="text-gray-300 hover:text-amber-400 transition-colors">Portfolio</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-amber-400 transition-colors">Contact</a></li>
             </ul>
           </div>
           
@@ -29,15 +28,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-amber-400" />
-                <span className="text-gray-300">hello@rishabhwaykole.com</span>
+                <span className="text-gray-300">rishabhwaykole2806@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-amber-400" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin size={18} className="text-amber-400" />
-                <span className="text-gray-300">San Francisco, CA</span>
+                <span className="text-gray-300">+91 9175170415</span>
               </div>
             </div>
             

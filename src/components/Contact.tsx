@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 const Contact = () => {
@@ -39,25 +38,12 @@ const Contact = () => {
               <div className="flex items-start">
                 <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-4">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#45533C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 22C16 18 20 14.4183 20 10C20 5.58172 16.4183 2 12 2C7.58172 2 4 5.58172 4 10C4 14.4183 8 18 12 22Z" stroke="#45533C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <h5 className="font-medium text-darkblue-800">Location</h5>
-                  <p className="text-darkblue-600">San Francisco, CA</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-4">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z" fill="#45533C"/>
                   </svg>
                 </div>
                 <div>
                   <h5 className="font-medium text-darkblue-800">Email</h5>
-                  <p className="text-darkblue-600">hello@rishabhwaykole.com</p>
+                  <p className="text-darkblue-600">rishabhwaykole2806@gmail.com</p>
                 </div>
               </div>
               
@@ -69,7 +55,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h5 className="font-medium text-darkblue-800">Phone</h5>
-                  <p className="text-darkblue-600">+1 (555) 123-4567</p>
+                  <p className="text-darkblue-600">+91 9175170415</p>
                 </div>
               </div>
             </div>
