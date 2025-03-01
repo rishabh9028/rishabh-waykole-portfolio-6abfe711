@@ -19,12 +19,12 @@ const Hero = () => {
       <div className="container mx-auto px-4 md:px-6 max-w-screen-xl xl:max-w-6xl 2xl:max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Image - First on mobile, to the right on desktop */}
-          <div className="relative text-center md:text-right fade-in-up order-1 md:order-2" style={{ '--delay': 2 } as React.CSSProperties}>
-            <div className="relative inline-block">
+          <div className="relative text-center md:text-right fade-in-up order-1 md:order-2 h-full flex items-center justify-center md:justify-end" style={{ '--delay': 2 } as React.CSSProperties}>
+            <div className="relative h-full">
               <img 
                 src="/lovable-uploads/83e49f23-b7e7-48f3-8219-a2807a82b234.png" 
                 alt="Rishabh Waykole" 
-                className="w-[340px] h-auto sm:w-[400px] md:w-[480px] lg:w-[520px] rounded-lg object-cover"
+                className="w-[380px] h-full sm:w-[450px] md:w-[520px] lg:w-[580px] object-cover rounded-lg md:h-[calc(100%_-_40px)]"
               />
             </div>
           </div>
