@@ -1,19 +1,10 @@
 
 import { ArrowRight } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Hero = () => {
-  const [position, setPosition] = useState(0);
-  
-  // Create infinite carousel animation for the skills bar with reduced speed
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPosition((prev) => (prev - 0.5) % 100);
-    }, 30);
-    
-    return () => clearInterval(interval);
-  }, []);
-  
+  // Remove the position state and infinite carousel animation
+
   return (
     <section className="pt-20 md:pt-32 pb-0 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 max-w-screen-xl xl:max-w-6xl 2xl:max-w-5xl">
@@ -57,17 +48,12 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="bg-amber-400 w-full py-4 md:py-6 mt-8 md:mt-10 relative overflow-hidden">
-        <div className="whitespace-nowrap" style={{ transform: `translateX(${position}%)` }}>
-          {/* Duplicate items to create seamless loop with equal spacing */}
-          {Array(3).fill(0).map((_, arrayIndex) => (
-            <div key={arrayIndex} className="inline-flex">
-              {['App Design', 'Website Design', 'Dashboard', 'Wireframing'].map((item, index) => (
-                <div key={`${arrayIndex}-${index}`} className="inline-flex items-center px-8 md:px-16">
-                  <span className="text-darkblue-800 font-medium text-xs md:text-base">{item}</span>
-                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-darkblue-800 rounded-full mx-8 md:mx-12"></div>
-                </div>
-              ))}
+      <div className="bg-amber-400 w-full py-4 md:py-6 mt-8 md:mt-10 relative">
+        {/* Replace loop with static spaced items */}
+        <div className="flex flex-wrap justify-center md:justify-between px-4 md:px-8 lg:px-16 xl:px-24 max-w-6xl mx-auto">
+          {['App Design', 'Website Design', 'Dashboard', 'Wireframing'].map((item, index) => (
+            <div key={index} className="px-3 py-1 md:px-0">
+              <span className="text-darkblue-800 font-medium text-xs md:text-base whitespace-nowrap">{item}</span>
             </div>
           ))}
         </div>
