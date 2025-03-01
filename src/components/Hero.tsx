@@ -1,10 +1,22 @@
 
 import { ArrowRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const Hero = () => {
+  const [position, setPosition] = useState(0);
+  
+  // Create infinite carousel animation for the skills bar
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPosition((prev) => (prev - 1) % 100);
+    }, 30);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
   return (
     <section className="pt-20 md:pt-32 pb-16 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 max-w-screen-xl xl:max-w-6xl 2xl:max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Image - First on mobile, to the right on desktop */}
           <div className="relative text-center md:text-right fade-in-up order-1 md:order-2" style={{ '--delay': 2 } as React.CSSProperties}>
@@ -46,11 +58,16 @@ const Hero = () => {
       </div>
       
       <div className="bg-amber-400 w-full py-4 md:py-6 mt-8 md:mt-10 relative overflow-hidden">
-        <div className="flex justify-around items-center whitespace-nowrap animate-slide">
-          {['App Design', 'Website Design', 'Dashboard', 'Wireframing'].map((item, index) => (
-            <div key={index} className="flex items-center px-4 md:px-10">
-              <span className="text-darkblue-800 font-medium text-xs md:text-base">{item}</span>
-              <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-darkblue-800 rounded-full mx-4 md:mx-8"></div>
+        <div className="whitespace-nowrap" style={{ transform: `translateX(${position}%)` }}>
+          {/* Duplicate items to create seamless loop */}
+          {Array(3).fill(0).map((_, arrayIndex) => (
+            <div key={arrayIndex} className="inline-flex">
+              {['App Design', 'Website Design', 'Dashboard', 'Wireframing'].map((item, index) => (
+                <div key={`${arrayIndex}-${index}`} className="inline-flex items-center px-4 md:px-10">
+                  <span className="text-darkblue-800 font-medium text-xs md:text-base">{item}</span>
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-darkblue-800 rounded-full mx-4 md:mx-8"></div>
+                </div>
+              ))}
             </div>
           ))}
         </div>
