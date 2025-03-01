@@ -1,4 +1,3 @@
-
 import StatsItem from "./StatsItem";
 import { PieChart, Award, Clock } from "lucide-react";
 
@@ -10,14 +9,10 @@ const About = () => {
           <h2 className="section-title">About Me</h2>
           <h3 className="text-3xl font-semibold mt-4">I help brands reach their <span className="highlight">goals</span> through design.</h3>
           <p className="text-gray-600 mt-4">
-            I'm a minimalist designer focused on creating meaningful digital experiences
-            that connect with people. My work combines strategic thinking with visual design
-            to deliver engaging and effective solutions.
+            I'm a minimalist designer focused on creating meaningful digital experiences that connect with people. By blending strategic thinking with strong visual design, I aim to craft engaging and effective solutions.
           </p>
           <p className="text-gray-600">
-            With over 8 years of experience in the design industry, I've worked with brands
-            across various sectors, from startups to global corporations. My approach is
-            collaborative, transparent, and focused on achieving measurable results.
+            With a collaborative approach, I work closely with clients to deliver designs that are not only visually compelling but also drive measurable results. My goal is to ensure every project reflects both creativity and purpose, making a lasting impact.
           </p>
         </div>
         
