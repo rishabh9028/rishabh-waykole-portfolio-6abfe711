@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Text Content - Always on top for mobile */}
           <div className="space-y-4 md:space-y-6 order-1 fade-in-up" style={{ '--delay': 0 } as React.CSSProperties}>
-            <div className="text-olive-700 text-sm">
+            <div className="text-darkblue-700 text-sm">
               Hello There! 👋
             </div>
             
@@ -18,7 +18,7 @@ const Hero = () => {
               Based in USA.
             </h1>
             
-            <p className="text-olive-700 max-w-lg">
+            <p className="text-darkblue-700 max-w-lg">
               I'm an experienced Product Designer with 15+ years in the
               field, collaborating with various companies and startups.
             </p>
@@ -38,7 +38,7 @@ const Hero = () => {
           <div className="relative text-center md:text-right fade-in-up order-2 mt-8 md:mt-0" style={{ '--delay': 2 } as React.CSSProperties}>
             <div className="relative inline-block">
               <div className="absolute -right-5 top-12 animate-float hidden sm:block">
-                <div className="bg-olive-600 text-white badge-secondary p-2 md:p-3 rounded-full text-xs md:text-sm">
+                <div className="bg-darkblue-600 text-white badge-secondary p-2 md:p-3 rounded-full text-xs md:text-sm">
                   Product Designer
                 </div>
               </div>
@@ -58,7 +58,7 @@ const Hero = () => {
               </div>
               
               <div className="absolute -right-4 md:right-8 -bottom-6 animate-pulse-soft hidden sm:block">
-                <div className="relative bg-olive-700 text-white rounded-full p-3 md:p-4 flex items-center justify-center w-12 h-12 md:w-16 md:h-16">
+                <div className="relative bg-darkblue-700 text-white rounded-full p-3 md:p-4 flex items-center justify-center w-12 h-12 md:w-16 md:h-16">
                   <ArrowRight size={20} className="absolute md:size-24" />
                   <div className="animate-spin-slow w-full h-full rounded-full border-2 border-white border-dashed"></div>
                 </div>
@@ -72,8 +72,8 @@ const Hero = () => {
         <div className="flex justify-around items-center whitespace-nowrap animate-slide">
           {['App Design', 'Website Design', 'Dashboard', 'Wireframing'].map((item, index) => (
             <div key={index} className="flex items-center px-4 md:px-10">
-              <span className="text-olive-800 font-medium text-xs md:text-base">{item}</span>
-              <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-olive-800 rounded-full mx-4 md:mx-8"></div>
+              <span className="text-darkblue-800 font-medium text-xs md:text-base">{item}</span>
+              <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-darkblue-800 rounded-full mx-4 md:mx-8"></div>
             </div>
           ))}
         </div>

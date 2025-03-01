@@ -19,7 +19,7 @@
     --primary: 42 91% 55%;
     --primary-foreground: 355.7 100% 97.3%;
 
-    --secondary: 110 24% 28%;
+    --secondary: 220 34% 34%;
     --secondary-foreground: 355.7 100% 97.3%;
 
     --muted: 240 4.8% 95.9%;
@@ -60,7 +60,7 @@
     --primary: 42 91% 55%;
     --primary-foreground: 144.9 80.4% 10%;
 
-    --secondary: 110 24% 28%;
+    --secondary: 220 34% 34%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 0 0% 15%;
@@ -104,11 +104,11 @@
   }
   
   .btn-primary {
-    @apply flex items-center justify-center px-6 py-3 rounded-full bg-olive-600 text-white hover:bg-olive-700 transition-all duration-300 space-x-2;
+    @apply flex items-center justify-center px-6 py-3 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300 space-x-2;
   }
   
   .btn-secondary {
-    @apply flex items-center justify-center px-6 py-3 rounded-full bg-white border border-olive-600 text-olive-600 hover:bg-olive-50 transition-all duration-300 space-x-2;
+    @apply flex items-center justify-center px-6 py-3 rounded-full bg-white border border-darkblue-600 text-darkblue-600 hover:bg-darkblue-50 transition-all duration-300 space-x-2;
   }
   
   .fade-in-up {
@@ -126,10 +126,10 @@
   }
   
   .badge-primary {
-    @apply bg-amber-400 text-olive-800;
+    @apply bg-amber-400 text-darkblue-800;
   }
   
   .badge-secondary {
-    @apply bg-olive-600 text-white;
+    @apply bg-darkblue-600 text-white;
   }
 }
