@@ -6,7 +6,7 @@ const Portfolio = () => {
     {
       title: "Aura Interiors",
       subtitle: "Portfolio Website for an interior company",
-      image: "/lovable-uploads/8995d088-2006-48ec-8363-f2aa4de1a303.png",
+      image: "/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png",
       tags: ["UI/UX Design", "Web Development", "Strategy"],
     }
   ];
