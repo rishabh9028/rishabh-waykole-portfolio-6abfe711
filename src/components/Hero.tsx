@@ -9,7 +9,7 @@ const Hero = () => {
           {/* Text Content - Always on top for mobile */}
           <div className="space-y-4 md:space-y-6 order-1 fade-in-up" style={{ '--delay': 0 } as React.CSSProperties}>
             <div className="text-darkblue-700 text-sm">
-              I'm an experienced Product Designer with 15+ years in the field 👋
+              Hello There! 👋
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
