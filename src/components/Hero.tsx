@@ -37,39 +37,11 @@ const Hero = () => {
           {/* Image - Always below text on mobile, to the right on desktop */}
           <div className="relative text-center md:text-right fade-in-up order-2 mt-8 md:mt-0" style={{ '--delay': 2 } as React.CSSProperties}>
             <div className="relative inline-block">
-              <div className="absolute -right-5 top-12 animate-float hidden sm:block">
-                <div className="bg-darkblue-600 text-white badge-secondary p-2 md:p-3 rounded-full text-xs md:text-sm">
-                  Product Designer
-                </div>
-              </div>
-              <div className="absolute right-24 md:right-36 top-6 animate-float hidden sm:block" style={{ animationDelay: '1s' }}>
-                <div className="badge-primary p-2 md:p-3 rounded-full text-xs md:text-sm">
-                  UI/UX Designer
-                </div>
-              </div>
-              
-              <div className="bg-amber-400 rounded-full w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[360px] md:h-[360px] relative overflow-hidden">
-                <img 
-                  src="/lovable-uploads/83e49f23-b7e7-48f3-8219-a2807a82b234.png" 
-                  alt="Olivia Smith" 
-                  className="absolute bottom-0 w-full h-auto object-cover"
-                  style={{ objectPosition: 'center' }}
-                />
-              </div>
-              
-              <div className="absolute -left-10 -bottom-6 animate-pulse-soft hidden sm:block">
-                <div className="relative bg-darkblue-700 text-white rounded-full p-3 md:p-4 flex items-center justify-center w-12 h-12 md:w-16 md:h-16">
-                  <span className="text-xs md:text-sm font-medium">Website Design</span>
-                  <div className="animate-spin-slow w-full h-full rounded-full border-2 border-white border-dashed"></div>
-                </div>
-              </div>
-              
-              <div className="absolute -right-4 md:right-8 -bottom-6 animate-pulse-soft hidden sm:block">
-                <div className="relative bg-darkblue-700 text-white rounded-full p-3 md:p-4 flex items-center justify-center w-12 h-12 md:w-16 md:h-16">
-                  <ArrowRight size={20} className="absolute md:size-24" />
-                  <div className="animate-spin-slow w-full h-full rounded-full border-2 border-white border-dashed"></div>
-                </div>
-              </div>
+              <img 
+                src="/lovable-uploads/83e49f23-b7e7-48f3-8219-a2807a82b234.png" 
+                alt="Olivia Smith" 
+                className="w-[260px] h-auto sm:w-[300px] md:w-[360px] object-cover"
+              />
             </div>
           </div>
         </div>
