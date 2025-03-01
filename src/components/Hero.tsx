@@ -14,13 +14,11 @@ const Hero = () => {
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
               I'm <span className="highlight">Rishabh Waykole</span>,<br />
-              Product Designer<br />
-              Based in USA.
+              Creative UI/UX & Web Designer
             </h1>
             
             <p className="text-darkblue-700 max-w-lg">
-              I'm an experienced Product Designer with 15+ years in the
-              field, collaborating with various companies and startups.
+              Transforming concepts into engaging digital experiences. I create websites and UI/UX designs that captivate and convert!
             </p>
             
             <div className="flex flex-wrap gap-3 md:gap-4">
