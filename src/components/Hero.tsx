@@ -38,7 +38,7 @@ const Hero = () => {
               <img 
                 src="/lovable-uploads/83e49f23-b7e7-48f3-8219-a2807a82b234.png" 
                 alt="Rishabh Waykole" 
-                className="w-[280px] h-auto sm:w-[320px] md:w-[400px] rounded-lg object-cover"
+                className="w-[340px] h-auto sm:w-[400px] md:w-[480px] lg:w-[520px] rounded-lg object-cover"
               />
             </div>
           </div>
