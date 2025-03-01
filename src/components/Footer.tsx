@@ -53,12 +53,10 @@ const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-600">© 2023 Rishabh Waykole. All rights reserved.</p>
+          <p className="text-gray-600">© 2025 Rishabh Waykole. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-600 hover:text-amber-400 transition-colors">Twitter</a>
-            <a href="#" className="text-gray-600 hover:text-amber-400 transition-colors">LinkedIn</a>
-            <a href="#" className="text-gray-600 hover:text-amber-400 transition-colors">Instagram</a>
-            <a href="#" className="text-gray-600 hover:text-amber-400 transition-colors">Dribbble</a>
+            <a href="#" className="text-gray-600 hover:text-amber-400 transition-colors">Terms and Conditions</a>
+            <a href="#" className="text-gray-600 hover:text-amber-400 transition-colors">Privacy Policy</a>
           </div>
         </div>
       </div>
