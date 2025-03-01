@@ -37,7 +37,7 @@ const Header = () => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
-          {['Home', 'Services', 'About', 'Projects', 'Blogs', 'Testimonials'].map((item, index) => (
+          {['Home', 'Services', 'About', 'Projects', 'Testimonials'].map((item, index) => (
             <a 
               key={index}
               href={`#${item.toLowerCase()}`}
