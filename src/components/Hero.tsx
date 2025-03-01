@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 fade-in-up" style={{ '--delay': 0 } as React.CSSProperties}>
-            <div className="inline-block bg-amber-100 px-3 py-1 rounded-full border border-amber-300 text-sm text-olive-800">
+            <div className="text-olive-700 text-sm">
               Hello There! 👋
             </div>
             
