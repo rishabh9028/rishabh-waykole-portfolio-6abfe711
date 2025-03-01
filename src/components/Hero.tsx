@@ -5,9 +5,9 @@ const Hero = () => {
   return (
     <section className="pt-20 md:pt-32 pb-16 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Text Content - Always on top for mobile */}
-          <div className="space-y-4 md:space-y-6 order-1 lg:order-1 fade-in-up" style={{ '--delay': 0 } as React.CSSProperties}>
+          <div className="space-y-4 md:space-y-6 order-1 fade-in-up" style={{ '--delay': 0 } as React.CSSProperties}>
             <div className="text-olive-700 text-sm">
               Hello There! 👋
             </div>
@@ -35,8 +35,8 @@ const Hero = () => {
           </div>
           
           {/* Image - Always below text on mobile, to the right on desktop */}
-          <div className="relative lg:text-right fade-in-up order-2 lg:order-2 mt-8 lg:mt-0" style={{ '--delay': 2 } as React.CSSProperties}>
-            <div className="relative">
+          <div className="relative text-center md:text-right fade-in-up order-2 mt-8 md:mt-0" style={{ '--delay': 2 } as React.CSSProperties}>
+            <div className="relative inline-block">
               <div className="absolute -right-5 top-12 animate-float hidden sm:block">
                 <div className="bg-olive-600 text-white badge-secondary p-2 md:p-3 rounded-full text-xs md:text-sm">
                   Product Designer
@@ -48,7 +48,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="bg-amber-400 rounded-full w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[360px] md:h-[360px] mx-auto lg:ml-auto lg:mr-0 relative overflow-hidden">
+              <div className="bg-amber-400 rounded-full w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[360px] md:h-[360px] relative overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=360&h=400" 
                   alt="Olivia Smith" 
