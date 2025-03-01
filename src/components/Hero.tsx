@@ -13,7 +13,7 @@ const Hero = () => {
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
-              I'm <span className="highlight">Olivia Smith</span>,<br />
+              I'm <span className="highlight">Rishabh Waykole</span>,<br />
               Product Designer<br />
               Based in USA.
             </h1>
@@ -39,8 +39,8 @@ const Hero = () => {
             <div className="relative inline-block">
               <img 
                 src="/lovable-uploads/83e49f23-b7e7-48f3-8219-a2807a82b234.png" 
-                alt="Olivia Smith" 
-                className="w-[260px] h-auto sm:w-[300px] md:w-[360px] object-cover"
+                alt="Rishabh Waykole" 
+                className="w-[280px] h-auto sm:w-[320px] md:w-[400px] rounded-lg object-cover"
               />
             </div>
           </div>
