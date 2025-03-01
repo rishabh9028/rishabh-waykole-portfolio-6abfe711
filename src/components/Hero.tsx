@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react';
 const Hero = () => {
   const [position, setPosition] = useState(0);
   
-  // Create infinite carousel animation for the skills bar
+  // Create infinite carousel animation for the skills bar with reduced speed
   useEffect(() => {
     const interval = setInterval(() => {
-      setPosition((prev) => (prev - 1) % 100);
+      setPosition((prev) => (prev - 0.5) % 100);
     }, 30);
     
     return () => clearInterval(interval);
@@ -24,7 +24,7 @@ const Hero = () => {
               <img 
                 src="/lovable-uploads/83e49f23-b7e7-48f3-8219-a2807a82b234.png" 
                 alt="Rishabh Waykole" 
-                className="w-[380px] h-full sm:w-[450px] md:w-[520px] lg:w-[580px] object-cover rounded-lg md:h-[calc(100%_-_40px)]"
+                className="w-[380px] object-contain sm:w-[450px] md:w-[520px] lg:w-[580px] rounded-lg"
               />
             </div>
           </div>
@@ -59,13 +59,13 @@ const Hero = () => {
       
       <div className="bg-amber-400 w-full py-4 md:py-6 mt-8 md:mt-10 relative overflow-hidden">
         <div className="whitespace-nowrap" style={{ transform: `translateX(${position}%)` }}>
-          {/* Duplicate items to create seamless loop */}
+          {/* Duplicate items to create seamless loop with equal spacing */}
           {Array(3).fill(0).map((_, arrayIndex) => (
             <div key={arrayIndex} className="inline-flex">
               {['App Design', 'Website Design', 'Dashboard', 'Wireframing'].map((item, index) => (
-                <div key={`${arrayIndex}-${index}`} className="inline-flex items-center px-4 md:px-10">
+                <div key={`${arrayIndex}-${index}`} className="inline-flex items-center px-8 md:px-16">
                   <span className="text-darkblue-800 font-medium text-xs md:text-base">{item}</span>
-                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-darkblue-800 rounded-full mx-4 md:mx-8"></div>
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-darkblue-800 rounded-full mx-8 md:mx-12"></div>
                 </div>
               ))}
             </div>
