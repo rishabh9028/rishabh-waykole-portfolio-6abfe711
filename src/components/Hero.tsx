@@ -33,7 +33,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="relative lg:text-right fade-in-up" style={{ '--delay': 2 } as React.CSSProperties}>
+          <div className="relative lg:text-right fade-in-up order-first lg:order-last" style={{ '--delay': 2 } as React.CSSProperties}>
             <div className="relative">
               <div className="absolute -right-5 top-12 animate-float">
                 <div className="bg-olive-600 text-white badge-secondary p-3 rounded-full">
