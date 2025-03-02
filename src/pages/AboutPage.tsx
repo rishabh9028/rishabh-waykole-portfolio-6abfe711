@@ -10,7 +10,7 @@ const AboutPage = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
-        <div className="bg-darkblue-600 pt-28 pb-12">
+        <div className="bg-darkblue-600 pt-32 pb-12"> {/* Increased padding top to prevent navbar overlap */}
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">About Me</h1>
             <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-gray-200">
