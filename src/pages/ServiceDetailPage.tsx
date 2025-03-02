@@ -38,9 +38,9 @@ const serviceData = {
         description: 'Conducting tests with real users to validate designs and identify opportunities for improvement.'
       }
     ],
-    color: 'bg-purple-100',
-    textColor: 'text-purple-800',
-    accentColor: 'bg-purple-500'
+    color: 'bg-darkblue-50',
+    textColor: 'text-darkblue-800',
+    accentColor: 'bg-darkblue-600'
   },
   'application-design': {
     title: 'Application Design Services',
@@ -75,9 +75,9 @@ const serviceData = {
         description: 'Providing detailed specifications and assets to ensure accurate implementation of designs.'
       }
     ],
-    color: 'bg-blue-100',
-    textColor: 'text-blue-800',
-    accentColor: 'bg-blue-500'
+    color: 'bg-darkblue-50',
+    textColor: 'text-darkblue-800',
+    accentColor: 'bg-darkblue-600'
   },
   'website-design': {
     title: 'Website Design Services',
@@ -112,9 +112,9 @@ const serviceData = {
         description: 'Comprehensive testing across browsers and devices, followed by a smooth launch process.'
       }
     ],
-    color: 'bg-green-100',
-    textColor: 'text-green-800',
-    accentColor: 'bg-green-500'
+    color: 'bg-darkblue-50',
+    textColor: 'text-darkblue-800',
+    accentColor: 'bg-darkblue-600'
   },
   'web-app-design': {
     title: 'Web App Design Services',
@@ -149,9 +149,9 @@ const serviceData = {
         description: 'Providing comprehensive documentation of all components, patterns, and guidelines for development teams.'
       }
     ],
-    color: 'bg-amber-100',
-    textColor: 'text-amber-800',
-    accentColor: 'bg-amber-500'
+    color: 'bg-darkblue-50',
+    textColor: 'text-darkblue-800',
+    accentColor: 'bg-darkblue-600'
   }
 };
 
