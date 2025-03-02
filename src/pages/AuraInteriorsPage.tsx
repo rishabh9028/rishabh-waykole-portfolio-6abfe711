@@ -3,38 +3,68 @@ import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
 import { ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
+import { Slider } from "@/components/ui/slider";
 
 const AuraInteriorsPage = () => {
-  // Images for the preview carousel - updated with real screenshots
-  const previewImages = [
+  // Images for the preview carousel - updated with real website screenshots
+  const websiteImages = [
     {
-      url: "/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png",
-      caption: "Homepage - Hero Section with Elegant Living Room"
+      url: "/lovable-uploads/87639d74-2837-41a2-83a5-d755870918bf.png",
+      caption: "Homepage - Elegant Living Room Transformation"
     },
     {
-      url: "/lovable-uploads/8995d088-2006-48ec-8363-f2aa4de1a303.png",
-      caption: "Portfolio Gallery with Project Showcases"
+      url: "/lovable-uploads/6569f599-0f79-48a4-aceb-3d932f0d299f.png",
+      caption: "About Page - Meet The Aura Team"
     },
     {
-      url: "/lovable-uploads/83e49f23-b7e7-48f3-8219-a2807a82b234.png",
-      caption: "Services Section with Interior Design Offerings"
+      url: "/lovable-uploads/716d918a-bb45-4f04-b492-4098a2dff02e.png",
+      caption: "Contact Page - Connect With Designers"
+    },
+    {
+      url: "/lovable-uploads/7425eeb9-ac39-4bd1-829d-6c67a1cd84da.png",
+      caption: "Portfolio Page - Discover Our Projects"
+    },
+    {
+      url: "/lovable-uploads/1a7ae2e8-682a-4ab1-a51c-741cd552f8a2.png",
+      caption: "Project Detail - Haven Interior Design"
     }
   ];
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   
   const goToNextImage = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === previewImages.length - 1 ? 0 : prevIndex + 1
+      prevIndex === websiteImages.length - 1 ? 0 : prevIndex + 1
     );
+    setTimeout(() => setIsAnimating(false), 500);
   };
   
   const goToPrevImage = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? previewImages.length - 1 : prevIndex - 1
+      prevIndex === 0 ? websiteImages.length - 1 : prevIndex - 1
     );
+    setTimeout(() => setIsAnimating(false), 500);
   };
+
+  const goToSpecificSlide = (index: number) => {
+    if (isAnimating || index === currentImageIndex) return;
+    setIsAnimating(true);
+    setCurrentImageIndex(index);
+    setTimeout(() => setIsAnimating(false), 500);
+  };
+
+  useEffect(() => {
+    // Auto-advance slideshow every 5 seconds
+    const slideInterval = setInterval(goToNextImage, 5000);
+    return () => clearInterval(slideInterval);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -58,6 +88,75 @@ const AuraInteriorsPage = () => {
             alt="Aura Interiors Preview" 
             className="w-full h-auto mt-[-80px]" // Increased the negative margin to crop more from the top
           />
+        </div>
+
+        {/* Website Images Slider Gallery */}
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12">
+          <h2 className="text-2xl font-semibold mb-6 font-['DM_Sans',sans-serif] text-darkblue-800 text-center">
+            Website Preview Gallery
+          </h2>
+          
+          <div className="relative max-w-5xl mx-auto overflow-hidden rounded-lg shadow-lg">
+            {/* Image Slider */}
+            <div className="relative h-[500px] md:h-[600px] overflow-hidden bg-darkblue-50">
+              {websiteImages.map((image, index) => (
+                <div 
+                  key={index} 
+                  className={cn(
+                    "absolute inset-0 transition-all duration-500 flex items-center justify-center",
+                    currentImageIndex === index 
+                      ? "opacity-100 translate-x-0" 
+                      : index < currentImageIndex 
+                        ? "opacity-0 -translate-x-full" 
+                        : "opacity-0 translate-x-full"
+                  )}
+                >
+                  <img 
+                    src={image.url} 
+                    alt={image.caption} 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              ))}
+              
+              {/* Navigation Controls */}
+              <button 
+                onClick={goToPrevImage} 
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-darkblue-800 shadow-md transition-all duration-200 focus:outline-none"
+                aria-label="Previous image"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              
+              <button 
+                onClick={goToNextImage} 
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-darkblue-800 shadow-md transition-all duration-200 focus:outline-none"
+                aria-label="Next image"
+              >
+                <ChevronRight size={24} />
+              </button>
+              
+              {/* Caption */}
+              <div className="absolute bottom-0 left-0 right-0 bg-darkblue-800/80 text-white p-3 text-center">
+                <p className="font-['DM_Sans',sans-serif]">{websiteImages[currentImageIndex].caption}</p>
+              </div>
+            </div>
+            
+            {/* Indicator Dots */}
+            <div className="flex justify-center gap-2 py-4 bg-white">
+              {websiteImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSpecificSlide(index)}
+                  className={cn(
+                    "w-3 h-3 rounded-full transition-all duration-300",
+                    currentImageIndex === index ? "bg-amber-400 scale-110" : "bg-gray-300 hover:bg-gray-400"
+                  )}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Visit Live Website Button */}
