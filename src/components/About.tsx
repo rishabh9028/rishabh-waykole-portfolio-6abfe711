@@ -1,5 +1,6 @@
+
 import StatsItem from "./StatsItem";
-import { PieChart, Award, Clock } from "lucide-react";
+import { PieChart } from "lucide-react";
 
 const About = () => {
   return (
@@ -16,29 +17,12 @@ const About = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 gap-6 fade-in-right" style={{ '--delay': '2' } as React.CSSProperties}>
+        <div className="grid grid-cols-1 gap-6 fade-in-right" style={{ '--delay': '2' } as React.CSSProperties}>
           <StatsItem 
             icon={<PieChart className="w-8 h-8 text-amber-400" />}
             value="98%"
             label="Client satisfaction rate"
             delay={1}
-          />
-          <StatsItem 
-            icon={<Award className="w-8 h-8 text-amber-400" />}
-            value="15+"
-            label="Design awards"
-            delay={2}
-          />
-          <StatsItem 
-            icon={<Clock className="w-8 h-8 text-amber-400" />}
-            value="8+"
-            label="Years of experience"
-            delay={3}
-          />
-          <StatsItem 
-            value="120+"
-            label="Projects completed"
-            delay={4}
           />
         </div>
       </div>
