@@ -1,6 +1,5 @@
 
-import StatsItem from "./StatsItem";
-import { PieChart } from "lucide-react";
+import React from 'react';
 
 const About = () => {
   return (
@@ -18,12 +17,7 @@ const About = () => {
         </div>
         
         <div className="grid grid-cols-1 gap-6 fade-in-right" style={{ '--delay': '2' } as React.CSSProperties}>
-          <StatsItem 
-            icon={<PieChart className="w-8 h-8 text-amber-400" />}
-            value="98%"
-            label="Client satisfaction rate"
-            delay={1}
-          />
+          {/* Client satisfaction rate stats item removed */}
         </div>
       </div>
     </section>
