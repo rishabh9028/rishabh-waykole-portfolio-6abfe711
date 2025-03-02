@@ -1,5 +1,6 @@
 
-import { Star } from 'lucide-react';
+import { Star, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Testimonials = () => {
   const testimonials = [
@@ -66,6 +67,16 @@ const Testimonials = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="text-center mt-12">
+        <Link 
+          to="/testimonials" 
+          className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-darkblue-800 px-6 py-3 rounded-md font-medium transition-colors"
+        >
+          View More Testimonials
+          <ArrowRight size={18} />
+        </Link>
       </div>
     </section>
   );

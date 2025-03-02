@@ -1,5 +1,6 @@
 
 import { Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -16,10 +17,11 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-amber-400 transition-colors">Home</a></li>
+              <li><Link to="/" className="text-gray-600 hover:text-amber-400 transition-colors">Home</Link></li>
               <li><a href="#services" className="text-gray-600 hover:text-amber-400 transition-colors">Services</a></li>
               <li><a href="#about" className="text-gray-600 hover:text-amber-400 transition-colors">About</a></li>
               <li><a href="#portfolio" className="text-gray-600 hover:text-amber-400 transition-colors">Portfolio</a></li>
+              <li><Link to="/testimonials" className="text-gray-600 hover:text-amber-400 transition-colors">Testimonials</Link></li>
             </ul>
           </div>
           
@@ -55,8 +57,8 @@ const Footer = () => {
         <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600">© 2025 Rishabh Waykole. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-600 hover:text-amber-400 transition-colors">Terms and Conditions</a>
-            <a href="#" className="text-gray-600 hover:text-amber-400 transition-colors">Privacy Policy</a>
+            <Link to="#" className="text-gray-600 hover:text-amber-400 transition-colors">Terms and Conditions</Link>
+            <Link to="#" className="text-gray-600 hover:text-amber-400 transition-colors">Privacy Policy</Link>
           </div>
         </div>
       </div>
