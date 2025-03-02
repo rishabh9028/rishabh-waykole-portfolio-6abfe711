@@ -126,10 +126,6 @@ export default {
 				'slide': {
 					'0%': { transform: 'translateX(0)' },
 					'100%': { transform: 'translateX(-100%)' }
-				},
-				'marquee': {
-					'0%': { transform: 'translateX(0)' },
-					'100%': { transform: 'translateX(-50%)' }
 				}
 			},
 			animation: {
@@ -140,8 +136,7 @@ export default {
 				'fade-in-left': 'fade-in-left 0.6s ease-out forwards',
 				'float': 'float 3s ease-in-out infinite',
 				'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
-				'slide': 'slide 20s linear infinite',
-				'marquee': 'marquee 20s linear infinite'
+				'slide': 'slide 20s linear infinite'
 			},
 			backgroundImage: {
 				'hero-pattern': 'linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.9) 100%)',
