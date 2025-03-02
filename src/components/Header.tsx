@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
@@ -46,30 +45,26 @@ const Header = () => {
           >
             Home
           </Link>
-          {['Services', 'About', 'Projects', 'Testimonials'].map((item, index) => (
-            item === 'Testimonials' ? (
-              <Link 
-                key={index}
-                to="/testimonials"
-                className="text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 text-darkblue-800 after:bg-darkblue-800"
-              >
-                {item}
-              </Link>
-            ) : (
-              <a 
-                key={index}
-                href={`#${item.toLowerCase()}`}
-                className="text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 text-darkblue-800 after:bg-darkblue-800"
-              >
-                {item}
-              </a>
-            )
+          {['Services', 'About', 'Projects'].map((item, index) => (
+            <a 
+              key={index}
+              href={`#${item.toLowerCase()}`}
+              className="text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 text-darkblue-800 after:bg-darkblue-800"
+            >
+              {item}
+            </a>
           ))}
+          <Link 
+            to="/testimonials"
+            className="text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 text-darkblue-800 after:bg-darkblue-800"
+          >
+            Testimonials
+          </Link>
         </nav>
         
-        <button className="rounded-full bg-white px-5 py-2 text-sm font-medium text-darkblue-800 border border-darkblue-600 hover:bg-darkblue-50 transition-all duration-300">
+        <Link to="/contact" className="rounded-full bg-white px-5 py-2 text-sm font-medium text-darkblue-800 border border-darkblue-600 hover:bg-darkblue-50 transition-all duration-300">
           Contact Me
-        </button>
+        </Link>
       </div>
     </header>
   );
