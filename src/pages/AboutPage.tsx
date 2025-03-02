@@ -2,6 +2,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
+import ReadyToGetStarted from "@/components/ReadyToGetStarted";
 import { ArrowRight, Check } from "lucide-react";
 
 const AboutPage = () => {
@@ -72,6 +73,8 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+        
+        <ReadyToGetStarted />
       </main>
       <Footer />
     </div>

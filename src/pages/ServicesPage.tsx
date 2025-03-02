@@ -2,6 +2,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Services from "@/components/Services";
+import ReadyToGetStarted from "@/components/ReadyToGetStarted";
 
 const ServicesPage = () => {
   return (
@@ -53,6 +54,8 @@ const ServicesPage = () => {
             </div>
           </div>
         </section>
+        
+        <ReadyToGetStarted />
       </main>
       <Footer />
     </div>
