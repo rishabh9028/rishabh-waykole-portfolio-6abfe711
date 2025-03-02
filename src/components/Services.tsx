@@ -16,6 +16,7 @@ const Services = () => {
         </svg>
       ),
       delay: 1,
+      slug: "ui-ux-design",
     },
     {
       title: "Application Design",
@@ -29,6 +30,7 @@ const Services = () => {
         </svg>
       ),
       delay: 2,
+      slug: "application-design",
     },
     {
       title: "Website Design",
@@ -43,6 +45,7 @@ const Services = () => {
         </svg>
       ),
       delay: 3,
+      slug: "website-design",
     },
     {
       title: "Web App Design",
@@ -57,6 +60,7 @@ const Services = () => {
         </svg>
       ),
       delay: 4,
+      slug: "web-app-design",
     },
   ];
 
@@ -81,6 +85,7 @@ const Services = () => {
               description={service.description}
               icon={service.icon}
               delay={service.delay}
+              slug={service.slug}
             />
           ))}
         </div>
