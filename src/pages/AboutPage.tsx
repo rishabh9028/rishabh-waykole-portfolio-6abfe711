@@ -1,8 +1,9 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
 const AboutPage = () => {
   return (
@@ -36,11 +37,6 @@ const AboutPage = () => {
                     </li>
                   ))}
                 </ul>
-                
-                <a href="#" className="inline-flex items-center px-5 py-3 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300 group mt-4">
-                  <span>Download Resume</span>
-                  <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
-                </a>
               </div>
               
               <div className="bg-white p-8 rounded-lg shadow-sm">
