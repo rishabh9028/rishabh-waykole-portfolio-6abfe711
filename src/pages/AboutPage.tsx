@@ -29,36 +29,47 @@ const AboutPage = () => {
                   My approach combines aesthetics with functionality to deliver exceptional user experiences.
                 </p>
                 
-                <ul className="space-y-5">
-                  <li className="flex items-start">
-                    <Check className="mr-3 text-amber-400 mt-1" size={20} />
-                    <div>
-                      <h4 className="font-medium text-lg">User-centered design approach</h4>
-                      <p className="text-gray-600 mt-1">I place users at the heart of every design decision, conducting thorough research to understand their needs, pain points, and aspirations. This empathetic approach ensures solutions that truly resonate with the target audience.</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex">
+                    <div className="mr-4 bg-amber-400 rounded-full p-2 h-fit">
+                      <Check className="text-white" size={20} />
                     </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-3 text-amber-400 mt-1" size={20} />
                     <div>
-                      <h4 className="font-medium text-lg">Focus on simplicity and clarity</h4>
-                      <p className="text-gray-600 mt-1">I believe that great design removes complexity rather than adding to it. By striving for simplicity in both visual elements and interactions, I create intuitive experiences that require minimal learning curves and cognitive load.</p>
+                      <h4 className="font-medium text-lg">User-centered design</h4>
+                      <p className="text-gray-600 mt-1">I place users at the heart of every design decision, conducting thorough research to understand their needs, pain points, and aspirations.</p>
                     </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-3 text-amber-400 mt-1" size={20} />
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex">
+                    <div className="mr-4 bg-amber-400 rounded-full p-2 h-fit">
+                      <Check className="text-white" size={20} />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-lg">Simplicity and clarity</h4>
+                      <p className="text-gray-600 mt-1">I believe that great design removes complexity rather than adding to it, creating intuitive experiences with minimal learning curves.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex">
+                    <div className="mr-4 bg-amber-400 rounded-full p-2 h-fit">
+                      <Check className="text-white" size={20} />
+                    </div>
                     <div>
                       <h4 className="font-medium text-lg">Attention to detail</h4>
-                      <p className="text-gray-600 mt-1">The small details often make the biggest difference. I meticulously refine every element of my designs, from pixel-perfect alignment to thoughtful micro-interactions, ensuring a polished and professional end result that stands out from the crowd.</p>
+                      <p className="text-gray-600 mt-1">The small details often make the biggest difference. I meticulously refine every element to ensure a polished and professional end result.</p>
                     </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="mr-3 text-amber-400 mt-1" size={20} />
+                  </div>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex">
+                    <div className="mr-4 bg-amber-400 rounded-full p-2 h-fit">
+                      <Check className="text-white" size={20} />
+                    </div>
                     <div>
                       <h4 className="font-medium text-lg">Accessibility-first mindset</h4>
-                      <p className="text-gray-600 mt-1">I firmly believe that great design should be inclusive and accessible to everyone. By considering diverse user needs and abilities from the start, I create solutions that can be enjoyed by the widest possible audience without compromising on aesthetics or functionality.</p>
+                      <p className="text-gray-600 mt-1">I firmly believe that great design should be inclusive and accessible to everyone, considering diverse user needs from the start.</p>
                     </div>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
