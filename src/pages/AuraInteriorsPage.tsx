@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
@@ -61,87 +60,17 @@ const AuraInteriorsPage = () => {
           />
         </div>
 
-        {/* Interactive Website Preview Section with Carousel */}
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 bg-gray-100 rounded-lg my-12">
-          <h2 className="text-2xl font-semibold mb-8 text-center font-['DM_Sans',sans-serif] text-darkblue-800">
-            Interactive Website Preview
-          </h2>
-          
-          <div className="relative rounded-lg overflow-hidden border border-gray-200 shadow-lg mx-auto max-w-5xl">
-            <div className="absolute top-0 left-0 right-0 bg-gray-800 py-2 px-4 flex items-center space-x-2 z-10">
-              <div className="flex space-x-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              </div>
-              <div className="flex-1 mx-2">
-                <div className="bg-gray-700 rounded-full py-1 px-3 text-xs text-gray-300 text-center overflow-hidden whitespace-nowrap">
-                  https://aura-interiors-61aaee.webflow.io/
-                </div>
-              </div>
-            </div>
-            
-            {/* Carousel for Website Screenshots */}
-            <div className="pt-10 pb-4 px-4 overflow-hidden relative">
-              <div className="relative">
-                <img 
-                  src={previewImages[currentImageIndex].url} 
-                  alt={`Aura Interiors - ${previewImages[currentImageIndex].caption}`} 
-                  className="w-full h-auto rounded-md shadow-md transition-opacity duration-300"
-                />
-                
-                {/* Caption */}
-                <div className="absolute bottom-4 left-0 right-0 text-center">
-                  <span className="bg-darkblue-800 bg-opacity-75 text-white px-4 py-2 rounded-full text-sm">
-                    {previewImages[currentImageIndex].caption}
-                  </span>
-                </div>
-                
-                {/* Navigation Arrows */}
-                <button 
-                  onClick={goToPrevImage}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md hover:bg-opacity-100 transition-all"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft className="text-darkblue-800" size={24} />
-                </button>
-                
-                <button 
-                  onClick={goToNextImage}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md hover:bg-opacity-100 transition-all"
-                  aria-label="Next image"
-                >
-                  <ChevronRight className="text-darkblue-800" size={24} />
-                </button>
-              </div>
-              
-              {/* Carousel Indicators */}
-              <div className="flex justify-center space-x-2 mt-4">
-                {previewImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      currentImageIndex === index ? "bg-darkblue-600 w-6" : "bg-gray-300"
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-6 text-center">
-            <a 
-              href="https://aura-interiors-61aaee.webflow.io/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300"
-            >
-              <span>Visit Live Website</span>
-              <ExternalLink size={16} />
-            </a>
-          </div>
+        {/* Visit Live Website Button */}
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-8 text-center">
+          <a 
+            href="https://aura-interiors-61aaee.webflow.io/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300"
+          >
+            <span>Visit Live Website</span>
+            <ExternalLink size={16} />
+          </a>
         </div>
 
         <div className="container mx-auto px-4 md:px-6 lg:px-8 py-16">
