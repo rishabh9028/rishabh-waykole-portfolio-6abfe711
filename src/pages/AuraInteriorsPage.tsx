@@ -182,21 +182,18 @@ const AuraInteriorsPage = () => {
               Website Preview Gallery
             </h2>
             
-            {/* Gallery Wall */}
+            {/* Gallery Wall with Fixed Size Images */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {websiteImages.map((image, index) => (
                 <div 
                   key={index} 
-                  className={cn(
-                    "overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl bg-white",
-                    index === 0 ? "sm:col-span-2 lg:col-span-2" : "" // Make the first image larger
-                  )}
+                  className="overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl bg-white h-full"
                 >
-                  <div className="relative">
+                  <div className="relative h-[250px]">
                     <img 
                       src={image.url} 
                       alt={image.caption} 
-                      className="w-full h-auto" // Removed object-cover and aspect ratio to not crop images
+                      className="w-full h-full object-contain bg-white p-1" 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
                       <p className="text-white p-4 font-['DM_Sans',sans-serif] text-sm md:text-base">
