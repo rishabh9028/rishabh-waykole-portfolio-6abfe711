@@ -1,4 +1,6 @@
+
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,16 +10,65 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors: {[key: string]: string} = {};
+    
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+    }
+    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    
+    return newErrors;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Form submission logic would go here
+    
+    const formErrors = validateForm();
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    // Prepare mailto URL with form data
+    const mailtoUrl = `mailto:rishabhwaykole2806@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\n\nMessage:\n${formData.message}`
+    )}`;
+    
+    // Open email client
+    window.location.href = mailtoUrl;
+    
+    // Show success message
+    toast.success('Form submitted successfully!');
+    
+    // Reset form after submission
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      message: ''
+    });
+    setIsSubmitting(false);
   };
 
   return (
@@ -66,28 +117,30 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-darkblue-700 mb-1">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-darkblue-700 mb-1">Name <span className="text-red-500">*</span></label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  className={`w-full px-4 py-2 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400`}
                   required
                 />
+                {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-darkblue-700 mb-1">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-darkblue-700 mb-1">Email <span className="text-red-500">*</span></label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  className={`w-full px-4 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400`}
                   required
                 />
+                {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
               </div>
             </div>
             
@@ -104,37 +157,40 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-darkblue-700 mb-1">Subject</label>
+                <label htmlFor="subject" className="block text-sm font-medium text-darkblue-700 mb-1">Subject <span className="text-red-500">*</span></label>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  className={`w-full px-4 py-2 border ${errors.subject ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400`}
                   required
                 />
+                {errors.subject && <p className="mt-1 text-xs text-red-500">{errors.subject}</p>}
               </div>
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-darkblue-700 mb-1">Message</label>
+              <label htmlFor="message" className="block text-sm font-medium text-darkblue-700 mb-1">Message <span className="text-red-500">*</span></label>
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 resize-none"
+                className={`w-full px-4 py-2 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 resize-none`}
                 required
               ></textarea>
+              {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
             </div>
             
             <button
               type="submit"
-              className="w-full py-3 bg-darkblue-600 text-white font-medium rounded-md hover:bg-darkblue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-darkblue-500"
+              disabled={isSubmitting}
+              className="w-full py-3 bg-darkblue-600 text-white font-medium rounded-md hover:bg-darkblue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-darkblue-500 disabled:opacity-75"
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>
