@@ -21,12 +21,12 @@ const AuraInteriorsPage = () => {
           </div>
         </div>
 
-        {/* Project Hero Image - Removed object-cover and max-height constraint */}
-        <div className="w-full">
+        {/* Project Hero Image - Slightly cropped from the top */}
+        <div className="w-full overflow-hidden">
           <img 
             src="/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png" 
             alt="Aura Interiors Preview" 
-            className="w-full h-auto"
+            className="w-full h-auto mt-[-40px]"
           />
         </div>
 
