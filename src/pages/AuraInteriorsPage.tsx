@@ -1,11 +1,10 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
-import { ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Slider } from "@/components/ui/slider";
 
 const AuraInteriorsPage = () => {
   // Images for the gallery - updated with uploaded website screenshots
@@ -48,65 +47,6 @@ const AuraInteriorsPage = () => {
     }
   ];
   
-  // State for desktop slider
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  
-  // State for mobile slider
-  const [mobileImageIndex, setMobileImageIndex] = useState(0);
-  const [mobileSliderValue, setMobileSliderValue] = useState([0]);
-  
-  const goToNextImage = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === websiteImages.length - 1 ? 0 : prevIndex + 1
-    );
-    setTimeout(() => setIsAnimating(false), 500);
-  };
-  
-  const goToPrevImage = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? websiteImages.length - 1 : prevIndex - 1
-    );
-    setTimeout(() => setIsAnimating(false), 500);
-  };
-
-  const goToSpecificSlide = (index: number) => {
-    if (isAnimating || index === currentImageIndex) return;
-    setIsAnimating(true);
-    setCurrentImageIndex(index);
-    setTimeout(() => setIsAnimating(false), 500);
-  };
-
-  // Handle mobile slider change
-  const handleMobileSliderChange = (values: number[]) => {
-    const newIndex = Math.round(values[0]);
-    setMobileSliderValue([newIndex]);
-    setMobileImageIndex(newIndex);
-  };
-
-  // Mobile slider auto-advance
-  useEffect(() => {
-    const mobileInterval = setInterval(() => {
-      setMobileImageIndex(prev => {
-        const nextIndex = prev === websiteImages.length - 1 ? 0 : prev + 1;
-        setMobileSliderValue([nextIndex]);
-        return nextIndex;
-      });
-    }, 3000);
-    
-    return () => clearInterval(mobileInterval);
-  }, [websiteImages.length]);
-
-  // Desktop slider auto-advance
-  useEffect(() => {
-    const desktopInterval = setInterval(goToNextImage, 5000);
-    return () => clearInterval(desktopInterval);
-  }, []);
-
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -236,148 +176,42 @@ const AuraInteriorsPage = () => {
           </div>
         </div>
         
-        {/* Website Images Gallery - Moved before ReadyToGetStarted */}
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12">
-          <h2 className="text-2xl font-semibold mb-6 font-['DM_Sans',sans-serif] text-darkblue-800 text-center">
-            Website Preview Gallery
-          </h2>
-          
-          {/* Desktop Gallery */}
-          <div className="hidden md:block">
-            <div className="relative max-w-5xl mx-auto overflow-hidden rounded-lg shadow-lg">
-              {/* Image Slider */}
-              <div className="relative h-[600px] overflow-hidden bg-darkblue-50">
-                {websiteImages.map((image, index) => (
-                  <div 
-                    key={index} 
-                    className={cn(
-                      "absolute inset-0 transition-all duration-500 flex items-center justify-center",
-                      currentImageIndex === index 
-                        ? "opacity-100 translate-x-0" 
-                        : index < currentImageIndex 
-                          ? "opacity-0 -translate-x-full" 
-                          : "opacity-0 translate-x-full"
-                    )}
-                  >
+        {/* Website Images Gallery Wall - Before ReadyToGetStarted */}
+        <div className="bg-gray-100 py-16">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-8 font-['DM_Sans',sans-serif] text-darkblue-800 text-center">
+              Website Preview Gallery
+            </h2>
+            
+            {/* Gallery Wall */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {websiteImages.map((image, index) => (
+                <div 
+                  key={index} 
+                  className={cn(
+                    "overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl bg-white",
+                    index === 0 ? "sm:col-span-2 lg:col-span-2" : "" // Make the first image larger
+                  )}
+                >
+                  <div className="relative">
                     <img 
                       src={image.url} 
                       alt={image.caption} 
-                      className="w-full h-full object-contain"
+                      className="w-full h-auto object-cover aspect-[16/10]"
                     />
-                  </div>
-                ))}
-                
-                {/* Navigation Controls */}
-                <button 
-                  onClick={goToPrevImage} 
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-darkblue-800 shadow-md transition-all duration-200 focus:outline-none"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                
-                <button 
-                  onClick={goToNextImage} 
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-darkblue-800 shadow-md transition-all duration-200 focus:outline-none"
-                  aria-label="Next image"
-                >
-                  <ChevronRight size={24} />
-                </button>
-                
-                {/* Caption */}
-                <div className="absolute bottom-0 left-0 right-0 bg-darkblue-800/80 text-white p-3 text-center">
-                  <p className="font-['DM_Sans',sans-serif]">{websiteImages[currentImageIndex].caption}</p>
-                </div>
-              </div>
-              
-              {/* Indicator Dots */}
-              <div className="flex justify-center gap-2 py-4 bg-white">
-                {websiteImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToSpecificSlide(index)}
-                    className={cn(
-                      "w-3 h-3 rounded-full transition-all duration-300",
-                      currentImageIndex === index ? "bg-amber-400 scale-110" : "bg-gray-300 hover:bg-gray-400"
-                    )}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          {/* Mobile Gallery - Only visible on mobile devices */}
-          <div className="md:hidden">
-            <div className="relative mx-auto overflow-hidden rounded-lg shadow-md">
-              {/* Mobile Image Slider */}
-              <div className="relative h-[450px] bg-white">
-                <div className="h-[400px] overflow-hidden">
-                  {websiteImages.map((image, index) => (
-                    <div 
-                      key={index}
-                      className={cn(
-                        "absolute inset-0 transition-all duration-300 flex items-center justify-center",
-                        mobileImageIndex === index 
-                          ? "opacity-100 translate-x-0" 
-                          : index < mobileImageIndex 
-                            ? "opacity-0 -translate-x-full" 
-                            : "opacity-0 translate-x-full"
-                      )}
-                    >
-                      <img 
-                        src={image.url} 
-                        alt={image.caption} 
-                        className="w-full h-full object-contain"
-                      />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                      <p className="text-white p-4 font-['DM_Sans',sans-serif] text-sm md:text-base">
+                        {image.caption}
+                      </p>
                     </div>
-                  ))}
+                  </div>
+                  <div className="p-3 md:p-4 bg-white">
+                    <p className="text-darkblue-800 font-['DM_Sans',sans-serif] text-sm md:text-base truncate">
+                      {image.caption}
+                    </p>
+                  </div>
                 </div>
-                
-                {/* Caption */}
-                <div className="absolute bottom-12 left-0 right-0 bg-darkblue-800/80 text-white p-3 text-center">
-                  <p className="text-sm font-['DM_Sans',sans-serif]">{websiteImages[mobileImageIndex].caption}</p>
-                </div>
-                
-                {/* Mobile Slider Control */}
-                <div className="absolute bottom-0 left-0 right-0 px-6 py-4">
-                  <Slider
-                    value={mobileSliderValue}
-                    min={0}
-                    max={websiteImages.length - 1}
-                    step={1}
-                    onValueChange={handleMobileSliderChange}
-                    className="w-full"
-                  />
-                </div>
-                
-                {/* Navigation Controls for Mobile */}
-                <div className="absolute bottom-1/2 left-0 right-0 flex justify-between px-2">
-                  <button 
-                    onClick={() => {
-                      const newIndex = mobileImageIndex === 0 ? websiteImages.length - 1 : mobileImageIndex - 1;
-                      setMobileImageIndex(newIndex);
-                      setMobileSliderValue([newIndex]);
-                    }}
-                    className="bg-gray-800/40 rounded-full p-2 text-white"
-                    aria-label="Previous image"
-                  >
-                    <ChevronLeft size={20} />
-                  </button>
-                  
-                  <button 
-                    onClick={() => {
-                      const newIndex = mobileImageIndex === websiteImages.length - 1 ? 0 : mobileImageIndex + 1;
-                      setMobileImageIndex(newIndex);
-                      setMobileSliderValue([newIndex]);
-                    }}
-                    className="bg-gray-800/40 rounded-full p-2 text-white"
-                    aria-label="Next image"
-                  >
-                    <ChevronRight size={20} />
-                  </button>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
