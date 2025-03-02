@@ -96,12 +96,12 @@ const AuraInteriorsPage = () => {
           </div>
         </div>
 
-        {/* Project Hero Image - Further cropped from the top */}
+        {/* Project Hero Image - Adjusted for mobile */}
         <div className="w-full overflow-hidden">
           <img 
             src="/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png" 
             alt="Aura Interiors Preview" 
-            className="w-full h-auto mt-[-80px]" // Increased the negative margin to crop more from the top
+            className="w-full h-auto md:mt-[-80px]" // Only apply negative margin on medium screens and up
           />
         </div>
 
