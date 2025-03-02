@@ -59,18 +59,18 @@ const Footer = () => {
             <div className="mt-6">
               <h4 className="text-lg font-semibold mb-2">Subscribe to newsletter</h4>
               <form onSubmit={handleSubscribe} className="mt-2">
-                <div className="flex flex-col sm:flex-row gap-2">
+                <div className="flex flex-col gap-2">
                   <input 
                     type="email" 
                     placeholder="Your email address" 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="px-4 py-2 w-full rounded-md sm:rounded-l-md sm:rounded-r-none focus:outline-none text-gray-800 border border-gray-300"
+                    className="px-4 py-2 w-full rounded-md focus:outline-none text-gray-800 border border-gray-300"
                     required
                   />
                   <button 
                     type="submit" 
-                    className="bg-amber-400 hover:bg-amber-500 text-darkblue-800 px-4 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md transition-colors"
+                    className="bg-amber-400 hover:bg-amber-500 text-darkblue-800 px-4 py-2 rounded-md transition-colors"
                   >
                     Join
                   </button>
