@@ -15,8 +15,8 @@ const ServiceDetailPage = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
       <main>
-        <div className="w-full bg-darkblue-600 pt-32 pb-16">
-          <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="w-full bg-darkblue-600 pb-16">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-24">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white capitalize">
               {serviceTitle}
             </h1>
