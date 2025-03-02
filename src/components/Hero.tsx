@@ -70,7 +70,7 @@ const Hero = () => {
       {/* Full-width skills bar with centered content */}
       <div className="bg-amber-400 w-full py-4 md:py-6 mt-8 md:mt-10">
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-8">
             {['App Design', 'Website Design', 'Dashboard', 'Wireframing'].map((item, index) => (
               <div key={index} className="py-1">
                 <span className="text-darkblue-700 font-medium text-xs md:text-base">{item}</span>
