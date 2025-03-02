@@ -7,19 +7,19 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const AuraInteriorsPage = () => {
-  // Images for the preview carousel
+  // Images for the preview carousel - updated with real screenshots
   const previewImages = [
     {
       url: "/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png",
-      caption: "Homepage - Hero Section"
+      caption: "Homepage - Hero Section with Elegant Living Room"
     },
     {
-      url: "/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png", // Using same image as placeholder, ideally would have different screenshots
-      caption: "Projects Gallery"
+      url: "/lovable-uploads/8995d088-2006-48ec-8363-f2aa4de1a303.png",
+      caption: "Portfolio Gallery with Project Showcases"
     },
     {
-      url: "/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png", // Using same image as placeholder
-      caption: "Contact Page"
+      url: "/lovable-uploads/83e49f23-b7e7-48f3-8219-a2807a82b234.png",
+      caption: "Services Section with Interior Design Offerings"
     }
   ];
   
