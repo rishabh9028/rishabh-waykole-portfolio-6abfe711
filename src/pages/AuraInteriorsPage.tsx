@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
@@ -39,14 +38,14 @@ const AuraInteriorsPage = () => {
               <h3 className="text-xl font-medium mb-3 font-['DM_Sans',sans-serif] text-darkblue-800">Color Palette</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-darkblue-600 mb-2"></div>
-                  <span className="text-sm font-['Inter',sans-serif] text-darkblue-800">Primary Blue</span>
-                  <span className="text-xs font-['Inter',sans-serif] text-gray-500">#455174</span>
+                  <div className="w-16 h-16 rounded-full bg-[#D08954] mb-2"></div>
+                  <span className="text-sm font-['Inter',sans-serif] text-darkblue-800">Burnt Orange</span>
+                  <span className="text-xs font-['Inter',sans-serif] text-gray-500">#D08954</span>
                 </div>
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-amber-400 mb-2"></div>
-                  <span className="text-sm font-['Inter',sans-serif] text-darkblue-800">Primary Yellow</span>
-                  <span className="text-xs font-['Inter',sans-serif] text-gray-500">#F5A623</span>
+                  <div className="w-16 h-16 rounded-full bg-[#1E1E1E] mb-2"></div>
+                  <span className="text-sm font-['Inter',sans-serif] text-darkblue-800">Charcoal Black</span>
+                  <span className="text-xs font-['Inter',sans-serif] text-gray-500">#1E1E1E</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 rounded-full bg-[#F5F5F5] border border-gray-200 mb-2"></div>
