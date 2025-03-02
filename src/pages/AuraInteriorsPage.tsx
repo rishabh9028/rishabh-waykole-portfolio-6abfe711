@@ -52,8 +52,9 @@ const AuraInteriorsPage = () => {
               src="https://aura-interiors-61aaee.webflow.io/" 
               title="Aura Interiors Website"
               className="w-full h-full pt-10"
+              style={{ border: 'none' }}
               loading="lazy"
-              sandbox="allow-scripts allow-same-origin"
+              allow="fullscreen"
             ></iframe>
           </div>
           
