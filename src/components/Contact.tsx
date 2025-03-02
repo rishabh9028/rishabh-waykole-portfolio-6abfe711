@@ -1,5 +1,5 @@
-
 import { useState } from 'react';
+import { Phone, WhatsApp } from 'lucide-react';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -90,6 +90,10 @@ const Contact = () => {
     { code: '+27', name: 'South Africa (+27)' },
   ];
 
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/919175170415', '_blank');
+  };
+
   return (
     <section className="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto bg-gray-50" id="contact">
       <h2 className="section-title mb-2 text-center">Contact Us</h2>
@@ -126,6 +130,21 @@ const Contact = () => {
                 <div>
                   <h5 className="font-medium text-darkblue-800">Phone</h5>
                   <p className="text-darkblue-600">+91 9175170415</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                  <WhatsApp className="text-green-600" size={20} />
+                </div>
+                <div>
+                  <h5 className="font-medium text-darkblue-800">WhatsApp</h5>
+                  <button 
+                    onClick={handleWhatsAppClick}
+                    className="text-green-600 font-medium hover:underline flex items-center"
+                  >
+                    Chat on WhatsApp <WhatsApp className="ml-1" size={16} />
+                  </button>
                 </div>
               </div>
             </div>
@@ -221,13 +240,24 @@ const Contact = () => {
               {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
             </div>
             
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full py-3 bg-darkblue-600 text-white font-medium rounded-md hover:bg-darkblue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-darkblue-500 disabled:opacity-75"
-            >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-3 bg-darkblue-600 text-white font-medium rounded-md hover:bg-darkblue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-darkblue-500 disabled:opacity-75"
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </button>
+              
+              <button
+                type="button"
+                onClick={handleWhatsAppClick}
+                className="w-full py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 flex items-center justify-center"
+              >
+                <WhatsApp className="mr-2" size={20} />
+                Chat on WhatsApp
+              </button>
+            </div>
           </form>
         </div>
       </div>

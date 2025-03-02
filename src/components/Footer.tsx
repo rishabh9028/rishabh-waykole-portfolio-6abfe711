@@ -1,5 +1,5 @@
 
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, WhatsApp } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
@@ -15,6 +15,10 @@ const Footer = () => {
     // Handle newsletter subscription
     alert(`Thank you for subscribing with ${email}!`);
     setEmail('');
+  };
+  
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/919175170415', '_blank');
   };
   
   return (
@@ -54,6 +58,15 @@ const Footer = () => {
                 <Phone size={18} className="text-amber-400" />
                 <span className={isHomePage ? "text-gray-600" : "text-gray-300"}>+91 9175170415</span>
               </div>
+              <div className="flex items-center space-x-3">
+                <WhatsApp size={18} className="text-green-500" />
+                <button 
+                  onClick={handleWhatsAppClick} 
+                  className={cn("hover:text-green-500 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}
+                >
+                  Chat on WhatsApp
+                </button>
+              </div>
             </div>
             
             <div className="mt-6">
@@ -68,12 +81,21 @@ const Footer = () => {
                     className="px-4 py-2 w-full rounded-md focus:outline-none text-gray-800 border border-gray-300"
                     required
                   />
-                  <button 
-                    type="submit" 
-                    className="bg-amber-400 hover:bg-amber-500 text-darkblue-800 px-4 py-2 rounded-md transition-colors"
-                  >
-                    Join
-                  </button>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <button 
+                      type="submit" 
+                      className="bg-amber-400 hover:bg-amber-500 text-darkblue-800 px-4 py-2 rounded-md transition-colors"
+                    >
+                      Join
+                    </button>
+                    <button 
+                      type="button" 
+                      onClick={handleWhatsAppClick}
+                      className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors flex items-center justify-center"
+                    >
+                      <WhatsApp size={16} className="mr-2" /> WhatsApp
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>

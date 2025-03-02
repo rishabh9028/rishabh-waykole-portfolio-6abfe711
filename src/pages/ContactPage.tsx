@@ -1,8 +1,7 @@
-
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, WhatsApp } from 'lucide-react';
 import { toast } from 'sonner';
 
 const ContactPage = () => {
@@ -92,6 +91,10 @@ const ContactPage = () => {
     { code: '+65', name: 'Singapore (+65)' },
     { code: '+27', name: 'South Africa (+27)' },
   ];
+  
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/919175170415', '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -104,7 +107,7 @@ const ContactPage = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-4 gap-8 mb-16">
           <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
             <div className="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center mb-4">
               <Mail className="text-amber-400 h-6 w-6" />
@@ -134,6 +137,20 @@ const ContactPage = () => {
             <h3 className="text-xl font-semibold text-darkblue-800 mb-2">Location</h3>
             <p className="text-gray-600">Bengaluru, India</p>
           </div>
+          
+          <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
+            <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-4">
+              <WhatsApp className="text-green-600 h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-semibold text-darkblue-800 mb-2">WhatsApp</h3>
+            <p className="text-gray-600">+91 9175170415</p>
+            <button 
+              onClick={handleWhatsAppClick}
+              className="text-green-600 mt-2 hover:underline flex items-center justify-center"
+            >
+              Chat on WhatsApp
+            </button>
+          </div>
         </div>
 
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -152,6 +169,15 @@ const ContactPage = () => {
                 <div className="flex items-center">
                   <Phone className="mr-3 h-5 w-5 text-amber-400" />
                   <span>+91 9175170415</span>
+                </div>
+                <div className="flex items-center">
+                  <WhatsApp className="mr-3 h-5 w-5 text-green-400" />
+                  <button 
+                    onClick={handleWhatsAppClick}
+                    className="text-white hover:text-green-400 transition-colors"
+                  >
+                    Chat on WhatsApp
+                  </button>
                 </div>
               </div>
             </div>
@@ -242,13 +268,24 @@ const ContactPage = () => {
                   {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
                 </div>
                 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-3 bg-amber-400 text-darkblue-800 font-medium rounded-md hover:bg-amber-500 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-400 disabled:opacity-75"
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </button>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-3 bg-amber-400 text-darkblue-800 font-medium rounded-md hover:bg-amber-500 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-400 disabled:opacity-75"
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </button>
+                  
+                  <button
+                    type="button"
+                    onClick={handleWhatsAppClick}
+                    className="w-full py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 flex items-center justify-center"
+                  >
+                    <WhatsApp className="mr-2" size={20} />
+                    Chat on WhatsApp
+                  </button>
+                </div>
               </form>
             </div>
           </div>
