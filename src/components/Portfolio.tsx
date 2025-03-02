@@ -1,5 +1,6 @@
 
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
   const projects = [
@@ -8,6 +9,7 @@ const Portfolio = () => {
       subtitle: "Portfolio Website for an interior company",
       image: "/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png",
       tags: ["UI/UX Design", "Web Development", "Strategy"],
+      link: "/projects/aura-interiors"
     }
   ];
 
@@ -19,10 +21,10 @@ const Portfolio = () => {
           <h3 className="text-3xl md:text-4xl font-semibold">
             My Latest <span className="text-amber-400">Projects</span>
           </h3>
-          <a href="#" className="inline-flex items-center px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300 group">
+          <Link to="/projects" className="inline-flex items-center px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300 group">
             <span>View All Projects</span>
             <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
       </div>
       
@@ -49,10 +51,10 @@ const Portfolio = () => {
                 <p className="text-gray-600 mb-4">{project.subtitle}</p>
               </div>
               <div className="mt-auto">
-                <a href="#" className="inline-flex items-center px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300 group">
+                <Link to={project.link} className="inline-flex items-center px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300 group">
                   <span>View Details</span>
                   <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

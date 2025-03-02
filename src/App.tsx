@@ -7,6 +7,7 @@ import ServicesPage from "@/pages/ServicesPage";
 import ServiceDetailPage from "@/pages/ServiceDetailPage";
 import AboutPage from "@/pages/AboutPage";
 import ProjectsPage from "@/pages/ProjectsPage";
+import AuraInteriorsPage from "@/pages/AuraInteriorsPage";
 import NotFound from "@/pages/NotFound";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/services/:slug" element={<ServiceDetailPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/aura-interiors" element={<AuraInteriorsPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
