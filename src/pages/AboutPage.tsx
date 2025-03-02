@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
@@ -10,13 +9,11 @@ const AboutPage = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
-        <div className="bg-darkblue-600 pt-32 pb-12"> {/* Increased padding top to prevent navbar overlap */}
-          <div className="container mx-auto px-4 md:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">About Me</h1>
-            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-gray-200">
-              Learn more about my journey, skills, and approach to design.
-            </p>
-          </div>
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 bg-darkblue-600 rounded-lg mt-16">
+          <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">About Me</h1>
+          <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-gray-200">
+            Learn more about my journey, skills, and approach to design.
+          </p>
         </div>
         
         <About />

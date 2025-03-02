@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Portfolio from "@/components/Portfolio";
@@ -12,28 +11,26 @@ const ProjectsPage = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
-        <div className="bg-darkblue-600 pt-32 pb-12"> {/* Increased padding top to prevent navbar overlap */}
-          <div className="container mx-auto px-4 md:px-6 lg:px-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">My Projects</h1>
-            <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-gray-200">
-              Explore my portfolio of work across various design disciplines and projects.
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-5 py-2 rounded-full text-sm transition-all ${
-                    activeCategory === category
-                      ? "bg-amber-400 text-darkblue-800"
-                      : "bg-darkblue-500 text-white hover:bg-darkblue-400"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 bg-darkblue-600 rounded-lg mt-16">
+          <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">My Projects</h1>
+          <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-gray-200">
+            Explore my portfolio of work across various design disciplines and projects.
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-5 py-2 rounded-full text-sm transition-all ${
+                  activeCategory === category
+                    ? "bg-amber-400 text-darkblue-800"
+                    : "bg-darkblue-500 text-white hover:bg-darkblue-400"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
           </div>
         </div>
         
