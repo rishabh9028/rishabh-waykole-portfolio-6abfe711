@@ -2,10 +2,41 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const AuraInteriorsPage = () => {
+  // Images for the preview carousel
+  const previewImages = [
+    {
+      url: "/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png",
+      caption: "Homepage - Hero Section"
+    },
+    {
+      url: "/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png", // Using same image as placeholder, ideally would have different screenshots
+      caption: "Projects Gallery"
+    },
+    {
+      url: "/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png", // Using same image as placeholder
+      caption: "Contact Page"
+    }
+  ];
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const goToNextImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === previewImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+  
+  const goToPrevImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? previewImages.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -30,12 +61,14 @@ const AuraInteriorsPage = () => {
           />
         </div>
 
-        {/* Live Preview Section - Updated with static screenshots */}
+        {/* Interactive Website Preview Section with Carousel */}
         <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 bg-gray-100 rounded-lg my-12">
-          <h2 className="text-2xl font-semibold mb-8 text-center font-['DM_Sans',sans-serif] text-darkblue-800">Website Preview</h2>
+          <h2 className="text-2xl font-semibold mb-8 text-center font-['DM_Sans',sans-serif] text-darkblue-800">
+            Interactive Website Preview
+          </h2>
           
           <div className="relative rounded-lg overflow-hidden border border-gray-200 shadow-lg mx-auto max-w-5xl">
-            <div className="absolute top-0 left-0 right-0 bg-gray-800 py-2 px-4 flex items-center space-x-2">
+            <div className="absolute top-0 left-0 right-0 bg-gray-800 py-2 px-4 flex items-center space-x-2 z-10">
               <div className="flex space-x-1.5">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -48,13 +81,53 @@ const AuraInteriorsPage = () => {
               </div>
             </div>
             
-            {/* Interactive Image Preview replacing iframe */}
-            <div className="pt-10 pb-4 px-4 overflow-hidden">
-              <img 
-                src="/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png" 
-                alt="Aura Interiors Website Preview" 
-                className="w-full h-auto rounded-md shadow-md"
-              />
+            {/* Carousel for Website Screenshots */}
+            <div className="pt-10 pb-4 px-4 overflow-hidden relative">
+              <div className="relative">
+                <img 
+                  src={previewImages[currentImageIndex].url} 
+                  alt={`Aura Interiors - ${previewImages[currentImageIndex].caption}`} 
+                  className="w-full h-auto rounded-md shadow-md transition-opacity duration-300"
+                />
+                
+                {/* Caption */}
+                <div className="absolute bottom-4 left-0 right-0 text-center">
+                  <span className="bg-darkblue-800 bg-opacity-75 text-white px-4 py-2 rounded-full text-sm">
+                    {previewImages[currentImageIndex].caption}
+                  </span>
+                </div>
+                
+                {/* Navigation Arrows */}
+                <button 
+                  onClick={goToPrevImage}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md hover:bg-opacity-100 transition-all"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="text-darkblue-800" size={24} />
+                </button>
+                
+                <button 
+                  onClick={goToNextImage}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md hover:bg-opacity-100 transition-all"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="text-darkblue-800" size={24} />
+                </button>
+              </div>
+              
+              {/* Carousel Indicators */}
+              <div className="flex justify-center space-x-2 mt-4">
+                {previewImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      currentImageIndex === index ? "bg-darkblue-600 w-6" : "bg-gray-300"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
           
