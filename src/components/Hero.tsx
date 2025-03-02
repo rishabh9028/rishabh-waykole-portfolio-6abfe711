@@ -50,12 +50,12 @@ const Hero = () => {
       </div>
       
       {/* Full-width skills bar with centered content */}
-      <div className="bg-amber-400 w-full py-4 md:py-6 mt-8 md:mt-10">
+      <div className="bg-amber-400 w-full py-4 md:py-6 mt-8 md:mt-10 overflow-hidden">
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
-          <div className="flex flex-wrap justify-center md:justify-between gap-x-8 gap-y-2">
+          <div className="flex no-wrap items-center justify-center gap-x-8 md:gap-x-12 whitespace-nowrap">
             {['App Design', 'Website Design', 'Dashboard', 'Wireframing'].map((item, index) => (
               <div key={index} className="py-1">
-                <span className="text-darkblue-800 font-medium text-xs md:text-base whitespace-nowrap">{item}</span>
+                <span className="text-darkblue-800 font-medium text-xs md:text-base">{item}</span>
               </div>
             ))}
           </div>
