@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -213,7 +214,7 @@ const AuraInteriorsPage = () => {
         <div className="py-16 bg-white">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 font-['DM_Sans',sans-serif] text-darkblue-800 text-center">
-              From Our Gallery
+              Website Images
             </h2>
             
             {/* Gallery with clickable images */}
