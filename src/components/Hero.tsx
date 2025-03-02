@@ -1,10 +1,7 @@
 
 import { ArrowRight } from 'lucide-react';
-import { useState } from 'react';
 
 const Hero = () => {
-  // Remove the position state and infinite carousel animation
-
   return (
     <section className="pt-20 md:pt-32 pb-0 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 max-w-screen-xl xl:max-w-6xl 2xl:max-w-5xl">
@@ -48,9 +45,10 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="bg-amber-400 w-full py-4 md:py-6 mt-8 md:mt-10 relative">
+      {/* Modified to stick to the edge by removing container padding and adding negative margin */}
+      <div className="bg-amber-400 w-full py-4 md:py-6 mt-8 md:mt-10 relative -mx-4 md:-mx-6 lg:-mx-8 px-4 md:px-6 lg:px-8">
         {/* Replace loop with static spaced items */}
-        <div className="flex flex-wrap justify-center md:justify-between px-4 md:px-8 lg:px-16 xl:px-24 max-w-6xl mx-auto">
+        <div className="flex flex-wrap justify-center md:justify-between max-w-6xl mx-auto">
           {['App Design', 'Website Design', 'Dashboard', 'Wireframing'].map((item, index) => (
             <div key={index} className="px-3 py-1 md:px-0">
               <span className="text-darkblue-800 font-medium text-xs md:text-base whitespace-nowrap">{item}</span>
