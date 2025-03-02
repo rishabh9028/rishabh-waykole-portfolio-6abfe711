@@ -59,10 +59,10 @@ const Footer = () => {
                 <span className={isHomePage ? "text-gray-600" : "text-gray-300"}>+91 9175170415</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MessageCircle size={18} className="text-green-500" />
+                <MessageCircle size={18} className="text-amber-400" />
                 <button 
                   onClick={handleWhatsAppClick} 
-                  className={cn("hover:text-green-500 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}
+                  className={cn("hover:text-amber-400 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}
                 >
                   Chat on WhatsApp
                 </button>
@@ -81,21 +81,12 @@ const Footer = () => {
                     className="px-4 py-2 w-full rounded-md focus:outline-none text-gray-800 border border-gray-300"
                     required
                   />
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <button 
-                      type="submit" 
-                      className="bg-amber-400 hover:bg-amber-500 text-darkblue-800 px-4 py-2 rounded-md transition-colors"
-                    >
-                      Join
-                    </button>
-                    <button 
-                      type="button" 
-                      onClick={handleWhatsAppClick}
-                      className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors flex items-center justify-center"
-                    >
-                      <MessageCircle size={16} className="mr-2" /> WhatsApp
-                    </button>
-                  </div>
+                  <button 
+                    type="submit" 
+                    className="bg-amber-400 hover:bg-amber-500 text-darkblue-800 px-4 py-2 rounded-md transition-colors"
+                  >
+                    Join
+                  </button>
                 </div>
               </form>
             </div>

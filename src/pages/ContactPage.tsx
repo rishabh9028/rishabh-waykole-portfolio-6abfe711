@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -139,14 +140,14 @@ const ContactPage = () => {
           </div>
           
           <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
-            <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-4">
-              <MessageCircle className="text-green-600 h-6 w-6" />
+            <div className="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center mb-4">
+              <MessageCircle className="text-amber-400 h-6 w-6" />
             </div>
             <h3 className="text-xl font-semibold text-darkblue-800 mb-2">WhatsApp</h3>
             <p className="text-gray-600">+91 9175170415</p>
             <button 
               onClick={handleWhatsAppClick}
-              className="text-green-600 mt-2 hover:underline flex items-center justify-center"
+              className="text-amber-400 mt-2 hover:underline flex items-center justify-center"
             >
               Chat on WhatsApp
             </button>
@@ -171,10 +172,10 @@ const ContactPage = () => {
                   <span>+91 9175170415</span>
                 </div>
                 <div className="flex items-center">
-                  <MessageCircle className="mr-3 h-5 w-5 text-green-400" />
+                  <MessageCircle className="mr-3 h-5 w-5 text-amber-400" />
                   <button 
                     onClick={handleWhatsAppClick}
-                    className="text-white hover:text-green-400 transition-colors"
+                    className="text-white hover:text-amber-400 transition-colors"
                   >
                     Chat on WhatsApp
                   </button>
@@ -268,22 +269,13 @@ const ContactPage = () => {
                   {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="w-full py-3 bg-amber-400 text-darkblue-800 font-medium rounded-md hover:bg-amber-500 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-400 disabled:opacity-75"
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </button>
-                  
-                  <button
-                    type="button"
-                    onClick={handleWhatsAppClick}
-                    className="w-full py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 flex items-center justify-center"
-                  >
-                    <MessageCircle className="mr-2" size={20} />
-                    Chat on WhatsApp
                   </button>
                 </div>
               </form>

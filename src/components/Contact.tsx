@@ -135,14 +135,14 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start">
-                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
-                  <MessageCircle className="text-green-600" size={20} />
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-4">
+                  <MessageCircle className="text-amber-400" size={20} />
                 </div>
                 <div>
                   <h5 className="font-medium text-darkblue-800">WhatsApp</h5>
                   <button 
                     onClick={handleWhatsAppClick}
-                    className="text-green-600 font-medium hover:underline flex items-center"
+                    className="text-amber-400 font-medium hover:underline flex items-center"
                   >
                     Chat on WhatsApp <MessageCircle className="ml-1" size={16} />
                   </button>
@@ -241,22 +241,13 @@ const Contact = () => {
               {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
               <button
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full py-3 bg-darkblue-600 text-white font-medium rounded-md hover:bg-darkblue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-darkblue-500 disabled:opacity-75"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
-              </button>
-              
-              <button
-                type="button"
-                onClick={handleWhatsAppClick}
-                className="w-full py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 flex items-center justify-center"
-              >
-                <MessageCircle className="mr-2" size={20} />
-                Chat on WhatsApp
               </button>
             </div>
           </form>
