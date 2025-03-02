@@ -16,7 +16,7 @@ const ServiceCard = ({ title, description, icon, delay, slug }: ServiceCardProps
       className="service-card fade-in-up" 
       style={{ '--delay': delay } as React.CSSProperties}
     >
-      <div className="w-12 h-12 bg-darkblue-50 rounded-lg flex items-center justify-center mb-5">
+      <div className="w-12 h-12 bg-darkblue-100 rounded-lg flex items-center justify-center mb-5">
         {icon}
       </div>
       <h3 className="text-xl font-medium mb-3 text-darkblue-800">{title}</h3>
