@@ -14,9 +14,9 @@ const ServiceDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <main>
+      <main className="mt-16"> {/* Added margin-top to prevent overlap with fixed header */}
         <div className="w-full bg-darkblue-600 pb-16">
-          <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-24">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white capitalize">
               {serviceTitle}
             </h1>

@@ -9,6 +9,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const isServiceDetailPage = location.pathname.startsWith('/services/');
   
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +29,7 @@ const Header = () => {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300",
-        isHomePage
+        isHomePage || isServiceDetailPage
           ? scrolled 
             ? "bg-white shadow-sm py-3" 
             : "bg-white py-4"
