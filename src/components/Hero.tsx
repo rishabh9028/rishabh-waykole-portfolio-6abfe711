@@ -1,5 +1,6 @@
 
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -33,13 +34,13 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start w-full">
-              <button className="btn-primary text-sm md:text-base">
+              <Link to="/projects" className="btn-primary text-sm md:text-base">
                 <span>View My Portfolio</span>
                 <ArrowRight size={16} className="md:size-18" />
-              </button>
-              <button className="btn-secondary text-sm md:text-base">
+              </Link>
+              <Link to="/contact" className="btn-secondary text-sm md:text-base">
                 <span>Hire Me</span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

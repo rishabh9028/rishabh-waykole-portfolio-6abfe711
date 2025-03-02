@@ -21,10 +21,6 @@ const Portfolio = () => {
           <h3 className="text-3xl md:text-4xl font-semibold">
             My Latest <span className="text-amber-400">Projects</span>
           </h3>
-          <Link to="/projects" className="inline-flex items-center px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300 group">
-            <span>View All Projects</span>
-            <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
-          </Link>
         </div>
       </div>
       

@@ -63,7 +63,7 @@ const ContactPage = () => {
               <MapPin className="text-amber-400 h-6 w-6" />
             </div>
             <h3 className="text-xl font-semibold text-darkblue-800 mb-2">Location</h3>
-            <p className="text-gray-600">Maharashtra, India</p>
+            <p className="text-gray-600">Bengaluru, India</p>
           </div>
         </div>
 
