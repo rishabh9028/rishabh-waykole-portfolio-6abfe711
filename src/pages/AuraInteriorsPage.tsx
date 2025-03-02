@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
@@ -8,32 +9,53 @@ import { cn } from "@/lib/utils";
 import { Slider } from "@/components/ui/slider";
 
 const AuraInteriorsPage = () => {
-  // Images for the preview carousel - updated with real website screenshots
+  // Images for the gallery - updated with uploaded website screenshots
   const websiteImages = [
     {
-      url: "/lovable-uploads/87639d74-2837-41a2-83a5-d755870918bf.png",
-      caption: "Homepage - Elegant Living Room Transformation"
+      url: "/lovable-uploads/e028bb6d-f2c6-4581-afc3-16e612f8a44c.png",
+      caption: "Homepage - Transform Your Space into a Work of Art"
     },
     {
-      url: "/lovable-uploads/6569f599-0f79-48a4-aceb-3d932f0d299f.png",
-      caption: "About Page - Meet The Aura Team"
+      url: "/lovable-uploads/a33a1324-fcc3-4b1e-91b5-45e6d1888ec9.png",
+      caption: "About Page - Who We Are"
     },
     {
-      url: "/lovable-uploads/716d918a-bb45-4f04-b492-4098a2dff02e.png",
-      caption: "Contact Page - Connect With Designers"
-    },
-    {
-      url: "/lovable-uploads/7425eeb9-ac39-4bd1-829d-6c67a1cd84da.png",
-      caption: "Portfolio Page - Discover Our Projects"
-    },
-    {
-      url: "/lovable-uploads/1a7ae2e8-682a-4ab1-a51c-741cd552f8a2.png",
+      url: "/lovable-uploads/ed0b3e0a-106e-48f7-a1a4-b4d17a5d4c67.png",
       caption: "Project Detail - Haven Interior Design"
+    },
+    {
+      url: "/lovable-uploads/6bef3c62-a60c-4f36-b064-7d8153896bc7.png",
+      caption: "Testimonials from Our Clients"
+    },
+    {
+      url: "/lovable-uploads/893c5c54-5747-4e5b-9046-83a5c11d75a6.png",
+      caption: "How It Works - Our Design Process"
+    },
+    {
+      url: "/lovable-uploads/a6ce8f6d-b69f-4958-a23b-280b64b314d1.png",
+      caption: "Contact Form - Get in Touch"
+    },
+    {
+      url: "/lovable-uploads/58e12dab-75f5-4746-8daa-e689232f2e66.png",
+      caption: "Navigation Menu"
+    },
+    {
+      url: "/lovable-uploads/800999af-1288-458a-a038-4126595a3fb4.png",
+      caption: "Portfolio Page - Our Projects"
+    },
+    {
+      url: "/lovable-uploads/d5148aa2-0f5c-4c33-9cee-66110d73c457.png",
+      caption: "Project Gallery - Sanctuary"
     }
   ];
   
+  // State for desktop slider
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  
+  // State for mobile slider
+  const [mobileImageIndex, setMobileImageIndex] = useState(0);
+  const [mobileSliderValue, setMobileSliderValue] = useState([0]);
   
   const goToNextImage = () => {
     if (isAnimating) return;
@@ -60,10 +82,30 @@ const AuraInteriorsPage = () => {
     setTimeout(() => setIsAnimating(false), 500);
   };
 
+  // Handle mobile slider change
+  const handleMobileSliderChange = (values: number[]) => {
+    const newIndex = Math.round(values[0]);
+    setMobileSliderValue([newIndex]);
+    setMobileImageIndex(newIndex);
+  };
+
+  // Mobile slider auto-advance
   useEffect(() => {
-    // Auto-advance slideshow every 5 seconds
-    const slideInterval = setInterval(goToNextImage, 5000);
-    return () => clearInterval(slideInterval);
+    const mobileInterval = setInterval(() => {
+      setMobileImageIndex(prev => {
+        const nextIndex = prev === websiteImages.length - 1 ? 0 : prev + 1;
+        setMobileSliderValue([nextIndex]);
+        return nextIndex;
+      });
+    }, 3000);
+    
+    return () => clearInterval(mobileInterval);
+  }, [websiteImages.length]);
+
+  // Desktop slider auto-advance
+  useEffect(() => {
+    const desktopInterval = setInterval(goToNextImage, 5000);
+    return () => clearInterval(desktopInterval);
   }, []);
 
   return (
@@ -88,75 +130,6 @@ const AuraInteriorsPage = () => {
             alt="Aura Interiors Preview" 
             className="w-full h-auto mt-[-80px]" // Increased the negative margin to crop more from the top
           />
-        </div>
-
-        {/* Website Images Slider Gallery */}
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12">
-          <h2 className="text-2xl font-semibold mb-6 font-['DM_Sans',sans-serif] text-darkblue-800 text-center">
-            Website Preview Gallery
-          </h2>
-          
-          <div className="relative max-w-5xl mx-auto overflow-hidden rounded-lg shadow-lg">
-            {/* Image Slider */}
-            <div className="relative h-[500px] md:h-[600px] overflow-hidden bg-darkblue-50">
-              {websiteImages.map((image, index) => (
-                <div 
-                  key={index} 
-                  className={cn(
-                    "absolute inset-0 transition-all duration-500 flex items-center justify-center",
-                    currentImageIndex === index 
-                      ? "opacity-100 translate-x-0" 
-                      : index < currentImageIndex 
-                        ? "opacity-0 -translate-x-full" 
-                        : "opacity-0 translate-x-full"
-                  )}
-                >
-                  <img 
-                    src={image.url} 
-                    alt={image.caption} 
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              ))}
-              
-              {/* Navigation Controls */}
-              <button 
-                onClick={goToPrevImage} 
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-darkblue-800 shadow-md transition-all duration-200 focus:outline-none"
-                aria-label="Previous image"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              
-              <button 
-                onClick={goToNextImage} 
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-darkblue-800 shadow-md transition-all duration-200 focus:outline-none"
-                aria-label="Next image"
-              >
-                <ChevronRight size={24} />
-              </button>
-              
-              {/* Caption */}
-              <div className="absolute bottom-0 left-0 right-0 bg-darkblue-800/80 text-white p-3 text-center">
-                <p className="font-['DM_Sans',sans-serif]">{websiteImages[currentImageIndex].caption}</p>
-              </div>
-            </div>
-            
-            {/* Indicator Dots */}
-            <div className="flex justify-center gap-2 py-4 bg-white">
-              {websiteImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSpecificSlide(index)}
-                  className={cn(
-                    "w-3 h-3 rounded-full transition-all duration-300",
-                    currentImageIndex === index ? "bg-amber-400 scale-110" : "bg-gray-300 hover:bg-gray-400"
-                  )}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Visit Live Website Button */}
@@ -260,6 +233,152 @@ const AuraInteriorsPage = () => {
                 <span>Back to Projects</span>
                 <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
+            </div>
+          </div>
+        </div>
+        
+        {/* Website Images Gallery - Moved before ReadyToGetStarted */}
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12">
+          <h2 className="text-2xl font-semibold mb-6 font-['DM_Sans',sans-serif] text-darkblue-800 text-center">
+            Website Preview Gallery
+          </h2>
+          
+          {/* Desktop Gallery - Hidden on mobile */}
+          <div className="hidden md:block">
+            <div className="relative max-w-5xl mx-auto overflow-hidden rounded-lg shadow-lg">
+              {/* Image Slider */}
+              <div className="relative h-[600px] overflow-hidden bg-darkblue-50">
+                {websiteImages.map((image, index) => (
+                  <div 
+                    key={index} 
+                    className={cn(
+                      "absolute inset-0 transition-all duration-500 flex items-center justify-center",
+                      currentImageIndex === index 
+                        ? "opacity-100 translate-x-0" 
+                        : index < currentImageIndex 
+                          ? "opacity-0 -translate-x-full" 
+                          : "opacity-0 translate-x-full"
+                    )}
+                  >
+                    <img 
+                      src={image.url} 
+                      alt={image.caption} 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ))}
+                
+                {/* Navigation Controls */}
+                <button 
+                  onClick={goToPrevImage} 
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-darkblue-800 shadow-md transition-all duration-200 focus:outline-none"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                
+                <button 
+                  onClick={goToNextImage} 
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-darkblue-800 shadow-md transition-all duration-200 focus:outline-none"
+                  aria-label="Next image"
+                >
+                  <ChevronRight size={24} />
+                </button>
+                
+                {/* Caption */}
+                <div className="absolute bottom-0 left-0 right-0 bg-darkblue-800/80 text-white p-3 text-center">
+                  <p className="font-['DM_Sans',sans-serif]">{websiteImages[currentImageIndex].caption}</p>
+                </div>
+              </div>
+              
+              {/* Indicator Dots */}
+              <div className="flex justify-center gap-2 py-4 bg-white">
+                {websiteImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSpecificSlide(index)}
+                    className={cn(
+                      "w-3 h-3 rounded-full transition-all duration-300",
+                      currentImageIndex === index ? "bg-amber-400 scale-110" : "bg-gray-300 hover:bg-gray-400"
+                    )}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Mobile Gallery - Only visible on mobile devices */}
+          <div className="md:hidden">
+            <div className="relative mx-auto overflow-hidden rounded-lg shadow-md">
+              {/* Mobile Image Slider */}
+              <div className="relative h-[450px] bg-white">
+                <div className="h-[400px] overflow-hidden">
+                  {websiteImages.map((image, index) => (
+                    <div 
+                      key={index}
+                      className={cn(
+                        "absolute inset-0 transition-all duration-300 flex items-center justify-center",
+                        mobileImageIndex === index 
+                          ? "opacity-100 translate-x-0" 
+                          : index < mobileImageIndex 
+                            ? "opacity-0 -translate-x-full" 
+                            : "opacity-0 translate-x-full"
+                      )}
+                    >
+                      <img 
+                        src={image.url} 
+                        alt={image.caption} 
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Caption */}
+                <div className="absolute bottom-12 left-0 right-0 bg-darkblue-800/80 text-white p-3 text-center">
+                  <p className="text-sm font-['DM_Sans',sans-serif]">{websiteImages[mobileImageIndex].caption}</p>
+                </div>
+                
+                {/* Mobile Slider Control */}
+                <div className="absolute bottom-0 left-0 right-0 px-6 py-4">
+                  <Slider
+                    value={mobileSliderValue}
+                    min={0}
+                    max={websiteImages.length - 1}
+                    step={1}
+                    onValueChange={handleMobileSliderChange}
+                    className="w-full"
+                  />
+                </div>
+                
+                {/* Navigation Controls for Mobile */}
+                <div className="absolute bottom-1/2 left-0 right-0 flex justify-between px-2">
+                  <button 
+                    onClick={() => {
+                      const newIndex = mobileImageIndex === 0 ? websiteImages.length - 1 : mobileImageIndex - 1;
+                      setMobileImageIndex(newIndex);
+                      setMobileSliderValue([newIndex]);
+                    }}
+                    className="bg-gray-800/40 rounded-full p-2 text-white"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+                  
+                  <button 
+                    onClick={() => {
+                      const newIndex = mobileImageIndex === websiteImages.length - 1 ? 0 : mobileImageIndex + 1;
+                      setMobileImageIndex(newIndex);
+                      setMobileSliderValue([newIndex]);
+                    }}
+                    className="bg-gray-800/40 rounded-full p-2 text-white"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight size={20} />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
