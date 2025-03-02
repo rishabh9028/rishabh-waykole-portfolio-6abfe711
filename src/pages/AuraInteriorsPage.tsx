@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
@@ -182,8 +183,8 @@ const AuraInteriorsPage = () => {
               Website Preview Gallery
             </h2>
             
-            {/* Simple Gallery Wall with images side by side */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {/* Simple Gallery Wall with images side by side - with reduced gap */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-2">
               {websiteImages.map((image, index) => (
                 <div key={index} className="h-[250px]">
                   <img 
