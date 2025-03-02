@@ -175,37 +175,22 @@ const AuraInteriorsPage = () => {
           </div>
         </div>
         
-        {/* Website Images Gallery Wall - Before ReadyToGetStarted */}
-        <div className="bg-gray-100 py-16">
+        {/* Website Images Gallery Wall - Simple Version */}
+        <div className="py-16">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 font-['DM_Sans',sans-serif] text-darkblue-800 text-center">
               Website Preview Gallery
             </h2>
             
-            {/* Gallery Wall with Fixed Size Images */}
+            {/* Simple Gallery Wall with images side by side */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {websiteImages.map((image, index) => (
-                <div 
-                  key={index} 
-                  className="overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl bg-white h-full"
-                >
-                  <div className="relative h-[250px]">
-                    <img 
-                      src={image.url} 
-                      alt={image.caption} 
-                      className="w-full h-full object-contain bg-white p-1" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                      <p className="text-white p-4 font-['DM_Sans',sans-serif] text-sm md:text-base">
-                        {image.caption}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="p-3 md:p-4 bg-white">
-                    <p className="text-darkblue-800 font-['DM_Sans',sans-serif] text-sm md:text-base truncate">
-                      {image.caption}
-                    </p>
-                  </div>
+                <div key={index} className="h-[250px]">
+                  <img 
+                    src={image.url} 
+                    alt={image.caption} 
+                    className="w-full h-full object-contain" 
+                  />
                 </div>
               ))}
             </div>
