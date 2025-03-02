@@ -1,11 +1,15 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const AuraInteriorsPage = () => {
+  // State for the image preview modal
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+
   // Images for the gallery - updated with uploaded website screenshots
   const websiteImages = [
     {
@@ -65,6 +69,16 @@ const AuraInteriorsPage = () => {
       caption: "Project Detail Page - Haven"
     }
   ];
+  
+  // Function to open the image preview
+  const openPreview = (imageUrl: string) => {
+    setPreviewImage(imageUrl);
+  };
+
+  // Function to close the image preview
+  const closePreview = () => {
+    setPreviewImage(null);
+  };
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -195,104 +209,65 @@ const AuraInteriorsPage = () => {
           </div>
         </div>
         
-        {/* Website Images Gallery Wall - Masonry Layout */}
+        {/* Website Images Gallery Wall - Modified for non-cropped images */}
         <div className="py-16 bg-white">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 font-['DM_Sans',sans-serif] text-darkblue-800 text-center">
               From Our Gallery
             </h2>
             
-            {/* Masonry Gallery Layout */}
+            {/* Gallery with clickable images */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-              {/* First Column */}
-              <div className="flex flex-col gap-2">
-                <div className="overflow-hidden">
-                  <img 
-                    src={websiteImages[0].url} 
-                    alt={websiteImages[0].caption}
-                    className="w-full h-auto object-cover" 
-                  />
-                </div>
-                <div className="overflow-hidden">
-                  <img 
-                    src={websiteImages[3].url} 
-                    alt={websiteImages[3].caption}
-                    className="w-full h-auto object-cover" 
-                  />
-                </div>
-                <div className="overflow-hidden">
-                  <img 
-                    src={websiteImages[6].url} 
-                    alt={websiteImages[6].caption}
-                    className="w-full h-auto object-cover" 
-                  />
-                </div>
-              </div>
-              
-              {/* Second Column - Middle column with taller images */}
-              <div className="flex flex-col gap-2">
-                <div className="overflow-hidden h-full">
-                  <img 
-                    src={websiteImages[1].url} 
-                    alt={websiteImages[1].caption}
-                    className="w-full h-auto object-cover" 
-                  />
-                </div>
-                <div className="overflow-hidden relative">
-                  <img 
-                    src={websiteImages[4].url} 
-                    alt={websiteImages[4].caption}
-                    className="w-full h-auto object-cover" 
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 p-2 text-center">
-                    <p className="text-sm text-gray-700">Original UI painting, Modern Implementation</p>
-                  </div>
-                </div>
-                <div className="overflow-hidden">
-                  <img 
-                    src={websiteImages[7].url} 
-                    alt={websiteImages[7].caption}
-                    className="w-full h-auto object-cover" 
-                  />
-                </div>
-              </div>
-              
-              {/* Third Column */}
-              <div className="flex flex-col gap-2">
-                <div className="overflow-hidden">
-                  <img 
-                    src={websiteImages[2].url} 
-                    alt={websiteImages[2].caption}
-                    className="w-full h-auto object-cover" 
-                  />
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  <div className="overflow-hidden">
+              {websiteImages.map((image, index) => (
+                <div 
+                  key={index} 
+                  className="overflow-hidden border border-gray-200 rounded cursor-pointer hover:shadow-md transition-shadow duration-300"
+                  onClick={() => openPreview(image.url)}
+                >
+                  <div className="relative aspect-auto">
                     <img 
-                      src={websiteImages[5].url} 
-                      alt={websiteImages[5].caption}
-                      className="w-full h-auto object-cover" 
+                      src={image.url} 
+                      alt={image.caption}
+                      className="w-full h-auto object-contain" 
                     />
-                  </div>
-                  <div className="overflow-hidden">
-                    <img 
-                      src={websiteImages[8].url} 
-                      alt={websiteImages[8].caption}
-                      className="w-full h-auto object-cover" 
-                    />
+                    {index === 4 && (
+                      <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 p-2 text-center">
+                        <p className="text-sm text-gray-700">Original UI painting, Modern Implementation</p>
+                      </div>
+                    )}
                   </div>
                 </div>
-                <div className="overflow-hidden">
-                  <img 
-                    src={websiteImages[9].url} 
-                    alt={websiteImages[9].caption}
-                    className="w-full h-auto object-cover" 
-                  />
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
+        
+        {/* Image Preview Modal */}
+        {previewImage && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4"
+            onClick={closePreview}
+          >
+            <div className="relative max-w-4xl w-full max-h-[90vh] flex flex-col">
+              <button 
+                className="absolute top-2 right-2 text-white bg-darkblue-800 rounded-full p-1 hover:bg-darkblue-700 transition-colors"
+                onClick={closePreview}
+              >
+                <X size={24} />
+              </button>
+              <div className="bg-white rounded-lg overflow-hidden">
+                <img 
+                  src={previewImage} 
+                  alt="Preview" 
+                  className="w-full h-auto max-h-[85vh] object-contain"
+                />
+              </div>
+              <div className="text-center mt-2 text-white">
+                <p>Click anywhere to close</p>
+              </div>
+            </div>
+          </div>
+        )}
         
         <ReadyToGetStarted />
       </main>
