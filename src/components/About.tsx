@@ -16,8 +16,12 @@ const About = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 gap-6 fade-in-right" style={{ '--delay': '2' } as React.CSSProperties}>
-          {/* Client satisfaction rate stats item removed */}
+        <div className="fade-in-right" style={{ '--delay': '2' } as React.CSSProperties}>
+          <img 
+            src="/lovable-uploads/11d75261-d3bb-4084-8601-3873d9133813.png" 
+            alt="Web design showcase with multiple website layouts on a desktop screen" 
+            className="rounded-lg shadow-lg w-full h-auto"
+          />
         </div>
       </div>
     </section>
