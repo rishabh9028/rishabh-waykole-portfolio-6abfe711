@@ -55,7 +55,7 @@ const Hero = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
             {['App Design', 'Website Design', 'Dashboard', 'Wireframing'].map((item, index) => (
               <div key={index} className="py-1">
-                <span className="text-darkblue-800 font-medium text-xs md:text-base">{item}</span>
+                <span className="text-darkblue-700 font-medium text-xs md:text-base">{item}</span>
               </div>
             ))}
           </div>
