@@ -1,7 +1,8 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const AuraInteriorsPage = () => {
@@ -27,6 +28,46 @@ const AuraInteriorsPage = () => {
             alt="Aura Interiors Preview" 
             className="w-full h-auto mt-[-80px]" // Increased the negative margin to crop more from the top
           />
+        </div>
+
+        {/* Live Preview Section */}
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 bg-gray-100 rounded-lg my-12">
+          <h2 className="text-2xl font-semibold mb-8 text-center font-['DM_Sans',sans-serif] text-darkblue-800">Live Website Preview</h2>
+          
+          <div className="relative aspect-video rounded-lg overflow-hidden border border-gray-200 shadow-lg mx-auto max-w-5xl">
+            <div className="absolute top-0 left-0 right-0 bg-gray-800 py-2 px-4 flex items-center space-x-2">
+              <div className="flex space-x-1.5">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+              <div className="flex-1 mx-2">
+                <div className="bg-gray-700 rounded-full py-1 px-3 text-xs text-gray-300 text-center overflow-hidden whitespace-nowrap">
+                  https://aura-interiors-61aaee.webflow.io/
+                </div>
+              </div>
+            </div>
+            
+            <iframe 
+              src="https://aura-interiors-61aaee.webflow.io/" 
+              title="Aura Interiors Website"
+              className="w-full h-full pt-10"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+            ></iframe>
+          </div>
+          
+          <div className="mt-6 text-center">
+            <a 
+              href="https://aura-interiors-61aaee.webflow.io/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-darkblue-600 text-white hover:bg-darkblue-700 transition-all duration-300"
+            >
+              <span>Visit Live Website</span>
+              <ExternalLink size={16} />
+            </a>
+          </div>
         </div>
 
         <div className="container mx-auto px-4 md:px-6 lg:px-8 py-16">
