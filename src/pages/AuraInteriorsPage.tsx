@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
@@ -197,7 +196,7 @@ const AuraInteriorsPage = () => {
                     <img 
                       src={image.url} 
                       alt={image.caption} 
-                      className="w-full h-auto object-cover aspect-[16/10]"
+                      className="w-full h-auto" // Removed object-cover and aspect ratio to not crop images
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
                       <p className="text-white p-4 font-['DM_Sans',sans-serif] text-sm md:text-base">
