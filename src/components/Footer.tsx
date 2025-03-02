@@ -2,10 +2,20 @@
 import { Mail, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 const Footer = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  
+  const [email, setEmail] = useState('');
+  
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle newsletter subscription
+    alert(`Thank you for subscribing with ${email}!`);
+    setEmail('');
+  };
   
   return (
     <footer className={cn(
@@ -48,16 +58,24 @@ const Footer = () => {
             
             <div className="mt-6">
               <h4 className="text-lg font-semibold mb-2">Subscribe to newsletter</h4>
-              <div className="flex mt-2">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="px-4 py-2 w-full max-w-xs rounded-l-md focus:outline-none text-gray-800 border border-gray-300"
-                />
-                <button className="bg-amber-400 hover:bg-amber-500 text-darkblue-800 px-4 rounded-r-md transition-colors">
-                  Join
-                </button>
-              </div>
+              <form onSubmit={handleSubscribe} className="mt-2">
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <input 
+                    type="email" 
+                    placeholder="Your email address" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="px-4 py-2 w-full rounded-md sm:rounded-l-md sm:rounded-r-none focus:outline-none text-gray-800 border border-gray-300"
+                    required
+                  />
+                  <button 
+                    type="submit" 
+                    className="bg-amber-400 hover:bg-amber-500 text-darkblue-800 px-4 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md transition-colors"
+                  >
+                    Join
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
