@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
@@ -243,7 +242,7 @@ const AuraInteriorsPage = () => {
             Website Preview Gallery
           </h2>
           
-          {/* Desktop Gallery - Hidden on mobile */}
+          {/* Desktop Gallery */}
           <div className="hidden md:block">
             <div className="relative max-w-5xl mx-auto overflow-hidden rounded-lg shadow-lg">
               {/* Image Slider */}
