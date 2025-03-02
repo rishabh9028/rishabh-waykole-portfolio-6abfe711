@@ -1,15 +1,22 @@
 
 import { Mail, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 const Footer = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  
   return (
-    <footer className="bg-darkblue-600 text-white py-16 px-4 md:px-8 lg:px-16">
+    <footer className={cn(
+      "py-16 px-4 md:px-8 lg:px-16",
+      isHomePage ? "bg-white text-darkblue-800" : "bg-darkblue-600 text-white"
+    )}>
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-4">
             <h3 className="text-xl font-semibold mb-4">Rishabh Waykole</h3>
-            <p className="text-gray-300 max-w-md">
+            <p className={cn("max-w-md", isHomePage ? "text-gray-600" : "text-gray-300")}>
               Creative designer specializing in UI/UX and web design with a passion for creating beautiful, functional, and user-centered digital experiences.
             </p>
           </div>
@@ -17,12 +24,12 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-300 hover:text-amber-400 transition-colors">Home</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-amber-400 transition-colors">Services</Link></li>
-              <li><Link to="/about" className="text-gray-300 hover:text-amber-400 transition-colors">About</Link></li>
-              <li><Link to="/projects" className="text-gray-300 hover:text-amber-400 transition-colors">Projects</Link></li>
-              <li><Link to="/testimonials" className="text-gray-300 hover:text-amber-400 transition-colors">Testimonials</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-amber-400 transition-colors">Contact</Link></li>
+              <li><Link to="/" className={cn("hover:text-amber-400 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}>Home</Link></li>
+              <li><Link to="/services" className={cn("hover:text-amber-400 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}>Services</Link></li>
+              <li><Link to="/about" className={cn("hover:text-amber-400 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}>About</Link></li>
+              <li><Link to="/projects" className={cn("hover:text-amber-400 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}>Projects</Link></li>
+              <li><Link to="/testimonials" className={cn("hover:text-amber-400 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}>Testimonials</Link></li>
+              <li><Link to="/contact" className={cn("hover:text-amber-400 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}>Contact</Link></li>
             </ul>
           </div>
           
@@ -31,11 +38,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-amber-400" />
-                <span className="text-gray-300">rishabhwaykole2806@gmail.com</span>
+                <span className={isHomePage ? "text-gray-600" : "text-gray-300"}>rishabhwaykole2806@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-amber-400" />
-                <span className="text-gray-300">+91 9175170415</span>
+                <span className={isHomePage ? "text-gray-600" : "text-gray-300"}>+91 9175170415</span>
               </div>
             </div>
             
@@ -55,11 +62,14 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-darkblue-500 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-300">© 2025 Rishabh Waykole. All rights reserved.</p>
+        <div className={cn(
+          "pt-8 flex flex-col md:flex-row justify-between items-center",
+          isHomePage ? "border-t border-gray-200" : "border-t border-darkblue-500"
+        )}>
+          <p className={isHomePage ? "text-gray-600" : "text-gray-300"}>© 2025 Rishabh Waykole. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="#" className="text-gray-300 hover:text-amber-400 transition-colors">Terms and Conditions</Link>
-            <Link to="#" className="text-gray-300 hover:text-amber-400 transition-colors">Privacy Policy</Link>
+            <Link to="#" className={cn("hover:text-amber-400 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}>Terms and Conditions</Link>
+            <Link to="#" className={cn("hover:text-amber-400 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}>Privacy Policy</Link>
           </div>
         </div>
       </div>
