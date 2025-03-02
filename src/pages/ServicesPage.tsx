@@ -7,7 +7,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow pt-24 bg-darkblue-600">
+      <main className="flex-grow pt-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 bg-darkblue-600 rounded-lg">
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">Our Services</h1>
           <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-gray-300">
@@ -17,7 +17,7 @@ const ServicesPage = () => {
         </div>
         <Services />
         
-        <section className="py-16 bg-darkblue-600">
+        <section className="py-16">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-semibold mb-6">How We Work</h2>
