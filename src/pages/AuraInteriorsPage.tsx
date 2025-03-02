@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadyToGetStarted from "@/components/ReadyToGetStarted";
@@ -45,7 +44,6 @@ const AuraInteriorsPage = () => {
       url: "/lovable-uploads/d5148aa2-0f5c-4c33-9cee-66110d73c457.png",
       caption: "Project Gallery - Sanctuary"
     },
-    // Adding the new uploaded images
     {
       url: "/lovable-uploads/f762236c-c604-4893-9545-f47dbafd3677.png",
       caption: "Full Home Page"
@@ -197,24 +195,101 @@ const AuraInteriorsPage = () => {
           </div>
         </div>
         
-        {/* Website Images Gallery Wall - Simple Version */}
-        <div className="py-16">
+        {/* Website Images Gallery Wall - Masonry Layout */}
+        <div className="py-16 bg-white">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 font-['DM_Sans',sans-serif] text-darkblue-800 text-center">
-              Website Preview Gallery
+              From Our Gallery
             </h2>
             
-            {/* Simple Gallery Wall with images side by side - with reduced gap */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-2">
-              {websiteImages.map((image, index) => (
-                <div key={index} className="h-[250px]">
+            {/* Masonry Gallery Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+              {/* First Column */}
+              <div className="flex flex-col gap-2">
+                <div className="overflow-hidden">
                   <img 
-                    src={image.url} 
-                    alt={image.caption} 
-                    className="w-full h-full object-contain" 
+                    src={websiteImages[0].url} 
+                    alt={websiteImages[0].caption}
+                    className="w-full h-auto object-cover" 
                   />
                 </div>
-              ))}
+                <div className="overflow-hidden">
+                  <img 
+                    src={websiteImages[3].url} 
+                    alt={websiteImages[3].caption}
+                    className="w-full h-auto object-cover" 
+                  />
+                </div>
+                <div className="overflow-hidden">
+                  <img 
+                    src={websiteImages[6].url} 
+                    alt={websiteImages[6].caption}
+                    className="w-full h-auto object-cover" 
+                  />
+                </div>
+              </div>
+              
+              {/* Second Column - Middle column with taller images */}
+              <div className="flex flex-col gap-2">
+                <div className="overflow-hidden h-full">
+                  <img 
+                    src={websiteImages[1].url} 
+                    alt={websiteImages[1].caption}
+                    className="w-full h-auto object-cover" 
+                  />
+                </div>
+                <div className="overflow-hidden relative">
+                  <img 
+                    src={websiteImages[4].url} 
+                    alt={websiteImages[4].caption}
+                    className="w-full h-auto object-cover" 
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 p-2 text-center">
+                    <p className="text-sm text-gray-700">Original UI painting, Modern Implementation</p>
+                  </div>
+                </div>
+                <div className="overflow-hidden">
+                  <img 
+                    src={websiteImages[7].url} 
+                    alt={websiteImages[7].caption}
+                    className="w-full h-auto object-cover" 
+                  />
+                </div>
+              </div>
+              
+              {/* Third Column */}
+              <div className="flex flex-col gap-2">
+                <div className="overflow-hidden">
+                  <img 
+                    src={websiteImages[2].url} 
+                    alt={websiteImages[2].caption}
+                    className="w-full h-auto object-cover" 
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="overflow-hidden">
+                    <img 
+                      src={websiteImages[5].url} 
+                      alt={websiteImages[5].caption}
+                      className="w-full h-auto object-cover" 
+                    />
+                  </div>
+                  <div className="overflow-hidden">
+                    <img 
+                      src={websiteImages[8].url} 
+                      alt={websiteImages[8].caption}
+                      className="w-full h-auto object-cover" 
+                    />
+                  </div>
+                </div>
+                <div className="overflow-hidden">
+                  <img 
+                    src={websiteImages[9].url} 
+                    alt={websiteImages[9].caption}
+                    className="w-full h-auto object-cover" 
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
