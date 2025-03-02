@@ -108,7 +108,8 @@ const ContactPage = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8 mb-16">
+        {/* Changed from md:grid-cols-4 to md:grid-cols-2 for a 2x2 layout */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
           <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
             <div className="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center mb-4">
               <Mail className="text-amber-400 h-6 w-6" />
