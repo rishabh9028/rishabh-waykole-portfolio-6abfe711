@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Mail, Phone, MapPin, WhatsApp } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 import { toast } from 'sonner';
 
 const ContactPage = () => {
@@ -140,7 +140,7 @@ const ContactPage = () => {
           
           <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
             <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-4">
-              <WhatsApp className="text-green-600 h-6 w-6" />
+              <MessageCircle className="text-green-600 h-6 w-6" />
             </div>
             <h3 className="text-xl font-semibold text-darkblue-800 mb-2">WhatsApp</h3>
             <p className="text-gray-600">+91 9175170415</p>
@@ -171,7 +171,7 @@ const ContactPage = () => {
                   <span>+91 9175170415</span>
                 </div>
                 <div className="flex items-center">
-                  <WhatsApp className="mr-3 h-5 w-5 text-green-400" />
+                  <MessageCircle className="mr-3 h-5 w-5 text-green-400" />
                   <button 
                     onClick={handleWhatsAppClick}
                     className="text-white hover:text-green-400 transition-colors"
@@ -282,7 +282,7 @@ const ContactPage = () => {
                     onClick={handleWhatsAppClick}
                     className="w-full py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 flex items-center justify-center"
                   >
-                    <WhatsApp className="mr-2" size={20} />
+                    <MessageCircle className="mr-2" size={20} />
                     Chat on WhatsApp
                   </button>
                 </div>

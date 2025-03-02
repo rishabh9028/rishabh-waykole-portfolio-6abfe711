@@ -1,5 +1,6 @@
+
 import { useState } from 'react';
-import { Phone, WhatsApp } from 'lucide-react';
+import { Phone, MessageCircle } from 'lucide-react';
 import { toast } from 'sonner';
 
 const Contact = () => {
@@ -135,7 +136,7 @@ const Contact = () => {
 
               <div className="flex items-start">
                 <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
-                  <WhatsApp className="text-green-600" size={20} />
+                  <MessageCircle className="text-green-600" size={20} />
                 </div>
                 <div>
                   <h5 className="font-medium text-darkblue-800">WhatsApp</h5>
@@ -143,7 +144,7 @@ const Contact = () => {
                     onClick={handleWhatsAppClick}
                     className="text-green-600 font-medium hover:underline flex items-center"
                   >
-                    Chat on WhatsApp <WhatsApp className="ml-1" size={16} />
+                    Chat on WhatsApp <MessageCircle className="ml-1" size={16} />
                   </button>
                 </div>
               </div>
@@ -254,7 +255,7 @@ const Contact = () => {
                 onClick={handleWhatsAppClick}
                 className="w-full py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 flex items-center justify-center"
               >
-                <WhatsApp className="mr-2" size={20} />
+                <MessageCircle className="mr-2" size={20} />
                 Chat on WhatsApp
               </button>
             </div>

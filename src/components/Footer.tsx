@@ -1,5 +1,5 @@
 
-import { Mail, Phone, WhatsApp } from "lucide-react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
@@ -59,7 +59,7 @@ const Footer = () => {
                 <span className={isHomePage ? "text-gray-600" : "text-gray-300"}>+91 9175170415</span>
               </div>
               <div className="flex items-center space-x-3">
-                <WhatsApp size={18} className="text-green-500" />
+                <MessageCircle size={18} className="text-green-500" />
                 <button 
                   onClick={handleWhatsAppClick} 
                   className={cn("hover:text-green-500 transition-colors", isHomePage ? "text-gray-600" : "text-gray-300")}
@@ -93,7 +93,7 @@ const Footer = () => {
                       onClick={handleWhatsAppClick}
                       className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors flex items-center justify-center"
                     >
-                      <WhatsApp size={16} className="mr-2" /> WhatsApp
+                      <MessageCircle size={16} className="mr-2" /> WhatsApp
                     </button>
                   </div>
                 </div>
