@@ -30,11 +30,11 @@ const AuraInteriorsPage = () => {
           />
         </div>
 
-        {/* Live Preview Section */}
+        {/* Live Preview Section - Updated with static screenshots */}
         <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 bg-gray-100 rounded-lg my-12">
-          <h2 className="text-2xl font-semibold mb-8 text-center font-['DM_Sans',sans-serif] text-darkblue-800">Live Website Preview</h2>
+          <h2 className="text-2xl font-semibold mb-8 text-center font-['DM_Sans',sans-serif] text-darkblue-800">Website Preview</h2>
           
-          <div className="relative aspect-video rounded-lg overflow-hidden border border-gray-200 shadow-lg mx-auto max-w-5xl">
+          <div className="relative rounded-lg overflow-hidden border border-gray-200 shadow-lg mx-auto max-w-5xl">
             <div className="absolute top-0 left-0 right-0 bg-gray-800 py-2 px-4 flex items-center space-x-2">
               <div className="flex space-x-1.5">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -48,14 +48,14 @@ const AuraInteriorsPage = () => {
               </div>
             </div>
             
-            <iframe 
-              src="https://aura-interiors-61aaee.webflow.io/" 
-              title="Aura Interiors Website"
-              className="w-full h-full pt-10"
-              style={{ border: 'none' }}
-              loading="lazy"
-              allow="fullscreen"
-            ></iframe>
+            {/* Interactive Image Preview replacing iframe */}
+            <div className="pt-10 pb-4 px-4 overflow-hidden">
+              <img 
+                src="/lovable-uploads/a2a1de97-ec2e-49a0-b5ca-19350fe2de74.png" 
+                alt="Aura Interiors Website Preview" 
+                className="w-full h-auto rounded-md shadow-md"
+              />
+            </div>
           </div>
           
           <div className="mt-6 text-center">
