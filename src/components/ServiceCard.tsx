@@ -11,13 +11,18 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ title, description, icon, delay, slug }: ServiceCardProps) => {
+  // Clone the icon element and add the amber color classes
+  const coloredIcon = React.cloneElement(icon, {
+    className: 'text-amber-400'
+  });
+
   return (
     <div 
       className="service-card fade-in-up" 
       style={{ '--delay': delay } as React.CSSProperties}
     >
-      <div className="w-12 h-12 bg-darkblue-100 rounded-lg flex items-center justify-center mb-5">
-        {icon}
+      <div className="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center mb-5">
+        {coloredIcon}
       </div>
       <h3 className="text-xl font-medium mb-3 text-darkblue-800">{title}</h3>
       <p className="text-darkblue-600 mb-4">{description}</p>
