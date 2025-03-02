@@ -188,25 +188,25 @@ const ServiceDetailPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow pt-24">
+      <main className="flex-grow">
         {/* Hero Section */}
-        <section className={`${service.color} py-16 md:py-24`}>
+        <section className="bg-darkblue-600 py-16 md:py-24 mt-16">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <button 
                 onClick={() => navigate('/services')}
-                className={`inline-flex items-center mb-8 ${service.textColor} hover:underline`}
+                className="inline-flex items-center mb-8 text-white hover:underline"
               >
                 <ArrowLeft size={16} className="mr-2" />
                 Back to Services
               </button>
-              <h1 className="text-3xl md:text-5xl font-bold mb-6">{service.title}</h1>
-              <p className="text-xl md:text-2xl text-gray-700 mb-8">{service.description}</p>
+              <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white">{service.title}</h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8">{service.description}</p>
               <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                 <button className="px-6 py-3 bg-amber-500 text-white rounded-md hover:bg-amber-600 transition-colors">
                   Get a Quote
                 </button>
-                <button className="px-6 py-3 border border-gray-400 rounded-md hover:bg-white hover:border-gray-500 transition-colors">
+                <button className="px-6 py-3 border border-gray-300 text-white rounded-md hover:bg-darkblue-500 hover:border-gray-200 transition-colors">
                   Schedule Consultation
                 </button>
               </div>
