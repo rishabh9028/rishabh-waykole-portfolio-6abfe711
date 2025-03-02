@@ -16,18 +16,18 @@ const ServiceDetailPage = () => {
       <Header />
       <main className="mt-16"> {/* Added margin-top to prevent overlap with fixed header */}
         <div className="w-full bg-darkblue-600 pb-16">
-          <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-8">
+          <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white capitalize">
               {serviceTitle}
             </h1>
-            <p className="text-xl text-gray-200 max-w-3xl">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Comprehensive solutions tailored to meet your unique needs and goals.
             </p>
           </div>
         </div>
 
         <div className="container mx-auto px-4 md:px-6 lg:px-8 py-16">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto">
             <p className="text-lg text-gray-600 mb-8">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit.
             </p>
