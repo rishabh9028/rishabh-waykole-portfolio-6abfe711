@@ -44,6 +44,27 @@ const AuraInteriorsPage = () => {
     {
       url: "/lovable-uploads/d5148aa2-0f5c-4c33-9cee-66110d73c457.png",
       caption: "Project Gallery - Sanctuary"
+    },
+    // Adding the new uploaded images
+    {
+      url: "/lovable-uploads/f762236c-c604-4893-9545-f47dbafd3677.png",
+      caption: "Full Home Page"
+    },
+    {
+      url: "/lovable-uploads/a0bde629-2c8b-4856-b662-5cfd41c5d3cf.png",
+      caption: "About Us Page"
+    },
+    {
+      url: "/lovable-uploads/26e0ec48-39ad-48a4-a86c-24cf983457b7.png",
+      caption: "Contact Us Page"
+    },
+    {
+      url: "/lovable-uploads/9a2b3f0a-3ae6-4a50-bfae-3dde8907ab31.png",
+      caption: "Portfolio Page"
+    },
+    {
+      url: "/lovable-uploads/764de4ab-4c8b-4402-88b9-3583c7cdc997.png",
+      caption: "Project Detail Page - Haven"
     }
   ];
   
