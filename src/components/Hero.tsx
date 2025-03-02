@@ -3,8 +3,6 @@ import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 const Hero = () => {
-  // Remove the position state and infinite carousel animation
-
   return (
     <section className="pt-20 md:pt-32 pb-0 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 max-w-screen-xl xl:max-w-6xl 2xl:max-w-5xl">
@@ -22,13 +20,13 @@ const Hero = () => {
           
           {/* Text Content - Below image on mobile, to the left on desktop */}
           <div className="space-y-4 md:space-y-6 order-2 md:order-1 fade-in-up" style={{ '--delay': 0 } as React.CSSProperties}>
-            <div className="text-darkblue-700 text-base md:text-lg">
+            <div className="inline-block px-4 py-1 rounded-full bg-darkblue-50 text-darkblue-700 text-base md:text-lg">
               Hello There! 👋
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
-              I'm <span className="highlight">Rishabh Waykole</span>,<br />
-              Creative UI/UX & Web Designer
+              I'm <span className="inline-block px-2 py-1 rounded-md bg-darkblue-600 text-white">Rishabh Waykole</span>,<br />
+              <span className="inline-block mt-2 px-2 py-1 rounded-md bg-darkblue-600 text-white">Creative UI/UX & Web Designer</span>
             </h1>
             
             <p className="text-darkblue-700 max-w-lg">
