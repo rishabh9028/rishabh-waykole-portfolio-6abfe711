@@ -1,12 +1,11 @@
 
-import { ArrowRight } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
   const services = [
     {
       title: "UI/UX Design",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      description: "Crafting intuitive user interfaces and seamless experiences that engage and delight. I focus on user research, wireframing, prototyping, and usability testing to create designs that are both beautiful and functional.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="3" width="18" height="18" rx="2" stroke="#45533C" strokeWidth="2"/>
@@ -20,7 +19,7 @@ const Services = () => {
     },
     {
       title: "Application Design",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      description: "Building custom application interfaces that balance aesthetics with functionality. My approach includes information architecture, interaction design, and visual design to create cohesive and engaging experiences across all platforms.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 18V6" stroke="#45533C" strokeWidth="2" strokeLinecap="round"/>
@@ -33,7 +32,7 @@ const Services = () => {
     },
     {
       title: "Website Design",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      description: "Designing responsive websites that represent your brand and connect with your audience. I deliver comprehensive solutions from concept to implementation, including responsive layouts, visual elements, and content strategy.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="3" width="18" height="18" rx="2" stroke="#45533C" strokeWidth="2"/>
@@ -47,7 +46,7 @@ const Services = () => {
     },
     {
       title: "Web App Design",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      description: "Creating complex web applications with intuitive interfaces that scale with your business. My process includes component architecture, state management patterns, and performance optimization for a seamless user experience.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="3" width="18" height="18" rx="2" stroke="#45533C" strokeWidth="2"/>
@@ -64,18 +63,14 @@ const Services = () => {
   return (
     <section className="pt-16 pb-12 md:pt-16 md:pb-16 bg-gray-50" id="services">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
-          <div>
-            <h2 className="section-title mb-3">Services</h2>
-            <h3 className="text-3xl md:text-4xl font-semibold">
-              Services <span className="highlight">I Provide</span>
-            </h3>
-          </div>
-          
-          <a href="#" className="inline-flex items-center px-5 py-3 rounded-full bg-olive-600 text-white mt-4 md:mt-0 hover:bg-olive-700 transition-all duration-300 group">
-            <span>View All Services</span>
-            <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
-          </a>
+        <div className="mb-12">
+          <h2 className="section-title mb-3">Expertise</h2>
+          <h3 className="text-3xl md:text-4xl font-semibold mb-6">
+            Services <span className="highlight">I Provide</span>
+          </h3>
+          <p className="text-lg text-gray-600 max-w-3xl">
+            Comprehensive design solutions tailored to elevate your brand and digital presence. Each service is customized to meet your specific needs and goals.
+          </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
