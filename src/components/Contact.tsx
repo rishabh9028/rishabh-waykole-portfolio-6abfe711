@@ -96,53 +96,53 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto bg-gray-50" id="contact">
+    <section className="py-12 sm:py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto bg-gray-50" id="contact">
       <h2 className="section-title mb-2 text-center">Contact Us</h2>
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
         <div className="space-y-4 fade-in-left" style={{ '--delay': '1' } as React.CSSProperties}>
-          <h3 className="text-3xl font-semibold">
+          <h3 className="text-2xl sm:text-3xl font-semibold">
             Let's Talk for <span className="text-amber-400">Your Next Projects</span>
           </h3>
-          <p className="text-gray-600 mb-8">
+          <p className="text-gray-600 mb-6">
             Have a project in mind? Let's discuss how I can help bring your vision to life. Fill out the form, and I'll get back to you as soon as possible.
           </p>
           
-          <div className="mt-8">
+          <div className="mt-6">
             <h4 className="text-xl font-semibold mb-4">Where to find me</h4>
             <div className="space-y-4">
               <div className="flex items-start">
-                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-4">
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z" fill="#45533C"/>
                   </svg>
                 </div>
                 <div>
                   <h5 className="font-medium text-darkblue-800">Email</h5>
-                  <p className="text-darkblue-600">rishabhwaykole2806@gmail.com</p>
+                  <p className="text-darkblue-600 text-sm sm:text-base break-all">rishabhwaykole2806@gmail.com</p>
                 </div>
               </div>
               
               <div className="flex items-start">
-                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-4">
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 16.92V19.92C22 20.4704 21.7893 20.9996 21.4142 21.3747C21.0391 21.7498 20.5099 21.9605 19.96 21.96C17.4223 21.7383 14.9857 20.8907 12.86 19.5C10.8961 18.2025 9.2375 16.5439 7.94 14.58C6.54 12.4404 5.69153 9.99047 5.48 7.44C5.47956 6.89202 5.68942 6.36379 6.06373 5.98905C6.43803 5.61432 6.96573 5.40309 7.514 5.4H10.514C11.518 5.38751 12.374 6.12081 12.514 7.11C12.6228 8.05369 12.8742 8.97671 13.26 9.85C13.5088 10.3843 13.3839 11.0184 12.954 11.45L11.954 12.45C13.1574 14.4958 14.8963 16.2351 16.942 17.44L17.942 16.44C18.3736 16.0101 19.0077 15.8852 19.542 16.134C20.4153 16.5198 21.3383 16.7712 22.282 16.88C23.2851 17.0213 24.0168 17.896 24 18.91L22 16.92Z" stroke="#45533C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <div>
                   <h5 className="font-medium text-darkblue-800">Phone</h5>
-                  <p className="text-darkblue-600">+91 9175170415</p>
+                  <p className="text-darkblue-600 text-sm sm:text-base">+91 9175170415</p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-4">
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3">
                   <MessageCircle className="text-amber-400" size={20} />
                 </div>
                 <div>
                   <h5 className="font-medium text-darkblue-800">WhatsApp</h5>
                   <button 
                     onClick={handleWhatsAppClick}
-                    className="text-amber-400 font-medium hover:underline flex items-center"
+                    className="text-amber-400 font-medium hover:underline flex items-center text-sm sm:text-base"
                   >
                     Chat on WhatsApp <MessageCircle className="ml-1" size={16} />
                   </button>
@@ -152,9 +152,9 @@ const Contact = () => {
           </div>
         </div>
         
-        <div className="bg-white p-8 rounded-lg shadow-md fade-in-right" style={{ '--delay': '2' } as React.CSSProperties}>
+        <div className="bg-white p-5 sm:p-8 rounded-lg shadow-md fade-in-right w-full" style={{ '--delay': '2' } as React.CSSProperties}>
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-darkblue-700 mb-1">Name <span className="text-red-500">*</span></label>
                 <input
@@ -163,7 +163,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400`}
+                  className={`w-full px-3 py-2 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm sm:text-base`}
                   required
                 />
                 {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
@@ -176,7 +176,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400`}
+                  className={`w-full px-3 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm sm:text-base`}
                   required
                 />
                 {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
@@ -191,7 +191,7 @@ const Contact = () => {
                   name="countryCode"
                   value={formData.countryCode}
                   onChange={handleChange}
-                  className="w-24 sm:w-32 px-2 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  className="w-20 sm:w-24 lg:w-32 px-1 sm:px-2 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-amber-400 text-xs sm:text-sm"
                   required
                 >
                   {countryCodes.map((country) => (
@@ -206,7 +206,7 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className={`flex-1 px-4 py-2 border ${errors.phone ? 'border-red-500' : 'border-gray-300'} border-l-0 rounded-r-md focus:outline-none focus:ring-2 focus:ring-amber-400`}
+                  className={`flex-1 px-3 py-2 border ${errors.phone ? 'border-red-500' : 'border-gray-300'} border-l-0 rounded-r-md focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm sm:text-base`}
                   required
                 />
               </div>
@@ -221,7 +221,7 @@ const Contact = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors.subject ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400`}
+                className={`w-full px-3 py-2 border ${errors.subject ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm sm:text-base`}
                 required
               />
               {errors.subject && <p className="mt-1 text-xs text-red-500">{errors.subject}</p>}
@@ -234,8 +234,8 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows={5}
-                className={`w-full px-4 py-2 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 resize-none`}
+                rows={4}
+                className={`w-full px-3 py-2 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 resize-none text-sm sm:text-base`}
                 required
               ></textarea>
               {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
@@ -245,7 +245,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 bg-darkblue-600 text-white font-medium rounded-md hover:bg-darkblue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-darkblue-500 disabled:opacity-75"
+                className="w-full py-2.5 bg-darkblue-600 text-white font-medium rounded-md hover:bg-darkblue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-darkblue-500 disabled:opacity-75 text-sm sm:text-base"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
