@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -77,7 +76,6 @@ const ContactPage = () => {
     setIsSubmitting(false);
   };
 
-  // Common country codes
   const countryCodes = [
     { code: '+1', name: 'United States/Canada (+1)' },
     { code: '+44', name: 'United Kingdom (+44)' },
@@ -100,55 +98,54 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <main className="pt-24 pb-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-darkblue-800 mb-4">Get In Touch</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+      <main className="pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-darkblue-800 mb-3 sm:mb-4">Get In Touch</h1>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             Have a project in mind or want to discuss a collaboration? I'd love to hear from you!
           </p>
         </div>
 
-        {/* Changed from md:grid-cols-4 to md:grid-cols-2 for a 2x2 layout */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
-            <div className="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center mb-4">
-              <Mail className="text-amber-400 h-6 w-6" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16">
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-amber-100 flex items-center justify-center mb-3 sm:mb-4">
+              <Mail className="text-amber-400 h-5 w-5 sm:h-6 sm:w-6" />
             </div>
-            <h3 className="text-xl font-semibold text-darkblue-800 mb-2">Email</h3>
-            <p className="text-gray-600">rishabhwaykole2806@gmail.com</p>
-            <a href="mailto:rishabhwaykole2806@gmail.com" className="text-amber-400 mt-2 hover:underline">
+            <h3 className="text-lg sm:text-xl font-semibold text-darkblue-800 mb-1 sm:mb-2">Email</h3>
+            <p className="text-gray-600 text-xs sm:text-sm break-all">rishabhwaykole2806@gmail.com</p>
+            <a href="mailto:rishabhwaykole2806@gmail.com" className="text-amber-400 mt-2 hover:underline text-xs sm:text-sm">
               Send an email
             </a>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
-            <div className="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center mb-4">
-              <Phone className="text-amber-400 h-6 w-6" />
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-amber-100 flex items-center justify-center mb-3 sm:mb-4">
+              <Phone className="text-amber-400 h-5 w-5 sm:h-6 sm:w-6" />
             </div>
-            <h3 className="text-xl font-semibold text-darkblue-800 mb-2">Phone</h3>
-            <p className="text-gray-600">+91 9175170415</p>
-            <a href="tel:+919175170415" className="text-amber-400 mt-2 hover:underline">
+            <h3 className="text-lg sm:text-xl font-semibold text-darkblue-800 mb-1 sm:mb-2">Phone</h3>
+            <p className="text-gray-600 text-xs sm:text-sm">+91 9175170415</p>
+            <a href="tel:+919175170415" className="text-amber-400 mt-2 hover:underline text-xs sm:text-sm">
               Call me
             </a>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
-            <div className="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center mb-4">
-              <MapPin className="text-amber-400 h-6 w-6" />
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-amber-100 flex items-center justify-center mb-3 sm:mb-4">
+              <MapPin className="text-amber-400 h-5 w-5 sm:h-6 sm:w-6" />
             </div>
-            <h3 className="text-xl font-semibold text-darkblue-800 mb-2">Location</h3>
-            <p className="text-gray-600">Bengaluru, India</p>
+            <h3 className="text-lg sm:text-xl font-semibold text-darkblue-800 mb-1 sm:mb-2">Location</h3>
+            <p className="text-gray-600 text-xs sm:text-sm">Bengaluru, India</p>
           </div>
           
-          <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
-            <div className="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center mb-4">
-              <MessageCircle className="text-amber-400 h-6 w-6" />
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm flex flex-col items-center text-center">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-amber-100 flex items-center justify-center mb-3 sm:mb-4">
+              <MessageCircle className="text-amber-400 h-5 w-5 sm:h-6 sm:w-6" />
             </div>
-            <h3 className="text-xl font-semibold text-darkblue-800 mb-2">WhatsApp</h3>
-            <p className="text-gray-600">+91 9175170415</p>
+            <h3 className="text-lg sm:text-xl font-semibold text-darkblue-800 mb-1 sm:mb-2">WhatsApp</h3>
+            <p className="text-gray-600 text-xs sm:text-sm">+91 9175170415</p>
             <button 
               onClick={handleWhatsAppClick}
-              className="text-amber-400 mt-2 hover:underline flex items-center justify-center"
+              className="text-amber-400 mt-2 hover:underline flex items-center justify-center text-xs sm:text-sm"
             >
               Chat on WhatsApp
             </button>
@@ -157,26 +154,26 @@ const ContactPage = () => {
 
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <div className="grid md:grid-cols-2">
-            <div className="bg-darkblue-600 text-white p-8 lg:p-12">
-              <h2 className="text-2xl lg:text-3xl font-bold mb-4">Let's Talk About Your Project</h2>
-              <p className="mb-6 text-gray-200">
+            <div className="bg-darkblue-600 text-white p-5 sm:p-6 lg:p-8 xl:p-12">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">Let's Talk About Your Project</h2>
+              <p className="mb-4 sm:mb-6 text-gray-200 text-xs sm:text-sm md:text-base">
                 Fill out the form and I'll get back to you as soon as possible. I'm here to help with any questions you might have.
               </p>
               
-              <div className="space-y-4 mt-8">
+              <div className="space-y-3 sm:space-y-4 mt-5 sm:mt-8">
                 <div className="flex items-center">
-                  <Mail className="mr-3 h-5 w-5 text-amber-400" />
-                  <span>rishabhwaykole2806@gmail.com</span>
+                  <Mail className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 text-amber-400" />
+                  <span className="text-xs sm:text-sm break-all">rishabhwaykole2806@gmail.com</span>
                 </div>
                 <div className="flex items-center">
-                  <Phone className="mr-3 h-5 w-5 text-amber-400" />
-                  <span>+91 9175170415</span>
+                  <Phone className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 text-amber-400" />
+                  <span className="text-xs sm:text-sm">+91 9175170415</span>
                 </div>
                 <div className="flex items-center">
-                  <MessageCircle className="mr-3 h-5 w-5 text-amber-400" />
+                  <MessageCircle className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 text-amber-400" />
                   <button 
                     onClick={handleWhatsAppClick}
-                    className="text-white hover:text-amber-400 transition-colors"
+                    className="text-white hover:text-amber-400 transition-colors text-xs sm:text-sm"
                   >
                     Chat on WhatsApp
                   </button>
@@ -184,45 +181,45 @@ const ContactPage = () => {
               </div>
             </div>
             
-            <div className="p-8 lg:p-12">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-5 sm:p-6 lg:p-8 xl:p-12">
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 md:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-darkblue-700 mb-1">Your Name <span className="text-red-500">*</span></label>
+                    <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-darkblue-700 mb-1">Your Name <span className="text-red-500">*</span></label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-2 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400`}
+                      className={`w-full px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 text-xs sm:text-sm`}
                       required
                     />
                     {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-darkblue-700 mb-1">Your Email <span className="text-red-500">*</span></label>
+                    <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-darkblue-700 mb-1">Your Email <span className="text-red-500">*</span></label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400`}
+                      className={`w-full px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 text-xs sm:text-sm`}
                       required
                     />
                     {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-darkblue-700 mb-1">Phone Number <span className="text-red-500">*</span></label>
+                  <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-darkblue-700 mb-1">Phone Number <span className="text-red-500">*</span></label>
                   <div className="flex">
                     <select
                       id="countryCode"
                       name="countryCode"
                       value={formData.countryCode}
                       onChange={handleChange}
-                      className="w-24 sm:w-32 px-2 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-amber-400"
+                      className="w-16 sm:w-20 md:w-24 px-1 sm:px-2 py-1.5 sm:py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-amber-400 text-xs"
                       required
                     >
                       {countryCodes.map((country) => (
@@ -237,34 +234,34 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className={`flex-1 px-4 py-2 border ${errors.phone ? 'border-red-500' : 'border-gray-300'} border-l-0 rounded-r-md focus:outline-none focus:ring-2 focus:ring-amber-400`}
+                      className={`flex-1 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 border ${errors.phone ? 'border-red-500' : 'border-gray-300'} border-l-0 rounded-r-md focus:outline-none focus:ring-2 focus:ring-amber-400 text-xs sm:text-sm`}
                       required
                     />
                   </div>
                   {errors.phone && <p className="mt-1 text-xs text-red-500">{errors.phone}</p>}
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-darkblue-700 mb-1">Subject <span className="text-red-500">*</span></label>
+                  <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-darkblue-700 mb-1">Subject <span className="text-red-500">*</span></label>
                   <input
                     type="text"
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2 border ${errors.subject ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400`}
+                    className={`w-full px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 border ${errors.subject ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 text-xs sm:text-sm`}
                     required
                   />
                   {errors.subject && <p className="mt-1 text-xs text-red-500">{errors.subject}</p>}
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-darkblue-700 mb-1">Your Message <span className="text-red-500">*</span></label>
+                  <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-darkblue-700 mb-1">Your Message <span className="text-red-500">*</span></label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={5}
-                    className={`w-full px-4 py-2 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 resize-none`}
+                    rows={4}
+                    className={`w-full px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 resize-none text-xs sm:text-sm`}
                     required
                   ></textarea>
                   {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
@@ -274,7 +271,7 @@ const ContactPage = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 bg-amber-400 text-darkblue-800 font-medium rounded-md hover:bg-amber-500 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-400 disabled:opacity-75"
+                    className="w-full py-2 sm:py-2.5 md:py-3 bg-amber-400 text-darkblue-800 font-medium rounded-md hover:bg-amber-500 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-400 disabled:opacity-75 text-xs sm:text-sm"
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
