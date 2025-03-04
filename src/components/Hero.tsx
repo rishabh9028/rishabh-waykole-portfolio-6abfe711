@@ -5,7 +5,7 @@ import MobileCarousel from './MobileCarousel';
 
 const Hero = () => {
   // Items for mobile carousel
-  const skills = ['App Design', 'Website Design', 'Dashboard', 'Wireframing'];
+  const skills = ['App Design', 'Website Design', 'Webapp Design', 'Wireframing'];
   const skillItems = skills.map((skill, index) => (
     <div key={index} className="py-1">
       <span className="text-darkblue-700 font-medium text-sm md:text-base whitespace-nowrap">{skill}</span>
