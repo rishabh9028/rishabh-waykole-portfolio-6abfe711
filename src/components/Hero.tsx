@@ -1,8 +1,17 @@
 
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import MobileCarousel from './MobileCarousel';
 
 const Hero = () => {
+  // Items for mobile carousel
+  const skills = ['App Design', 'Website Design', 'Dashboard', 'Wireframing'];
+  const skillItems = skills.map((skill, index) => (
+    <div key={index} className="py-1">
+      <span className="text-darkblue-700 font-medium text-sm md:text-base whitespace-nowrap">{skill}</span>
+    </div>
+  ));
+
   return (
     <section className="pt-20 md:pt-32 pb-0 relative overflow-hidden w-full">
       <div className="container mx-auto px-4 md:px-6 max-w-screen-xl xl:max-w-7xl 2xl:max-w-full">
@@ -67,17 +76,22 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Full-width skills bar with centered content */}
-      <div className="bg-amber-400 w-full py-4 md:py-6 mt-8 md:mt-10">
+      {/* Full-width skills bar - desktop version */}
+      <div className="bg-amber-400 w-full py-4 md:py-6 mt-8 md:mt-10 hidden md:block">
         <div className="max-w-screen-xl mx-auto px-4 md:px-6">
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-8">
-            {['App Design', 'Website Design', 'Dashboard', 'Wireframing'].map((item, index) => (
+            {skills.map((item, index) => (
               <div key={index} className="py-1">
                 <span className="text-darkblue-700 font-medium text-xs md:text-base">{item}</span>
               </div>
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Mobile only - Infinite horizontal carousel */}
+      <div className="bg-amber-400 w-full md:hidden mt-8">
+        <MobileCarousel items={skillItems} />
       </div>
     </section>
   );
